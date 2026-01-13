@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- TínStore - Tienda Online -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -53,9 +54,9 @@
                 
                 <!-- Menú Desktop -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="#inicio" class="text-gray-600 hover:text-brand font-medium transition">Inicio</a>
-                    <a href="#coleccion" class="text-gray-600 hover:text-brand font-medium transition">Colección</a>
-                    <a href="nosotros.html" class="text-gray-600 hover:text-brand font-medium transition">Nosotros</a>
+                    <a href="#inicio" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-brand font-medium transition duration-300">Inicio</a>
+                    <a href="#coleccion" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-brand font-medium transition duration-300">Colección</a>
+                    <a href="nosotros.html" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-brand font-medium transition duration-300">Nosotros</a>
                 </div>
 
                 <!-- Iconos Acción -->
@@ -183,11 +184,21 @@
                     </div>
                     <h3 class="text-lg font-semibold text-gray-800">Pijama Seda Soft</h3>
                     <p class="text-gray-500 text-sm mb-3">Tacto suave y fresco</p>
-                    <div class="flex justify-between items-center">
+                    <div class="flex flex-col gap-2">
                         <span class="text-xl font-bold text-gray-900">$85.000</span>
-                        <button onclick="addToCart('Pijama Seda Soft', 85000)" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
-                            <i class="fa-solid fa-cart-plus"></i>
-                        </button>
+                        <div class="flex justify-between items-center gap-2">
+                            <select id="size-pijama-seda" class="border border-gray-200 rounded-lg text-sm py-1 px-2 focus:border-brand outline-none bg-white w-24">
+                                <option value="S">Talla S</option>
+                                <option value="M">Talla M</option>
+                                <option value="L">Talla L</option>
+                            </select>
+                            <div class="flex items-center gap-2">
+                                <input type="number" id="qty-pijama-seda" min="1" value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
+                                <button onclick="addToCart('Pijama Seda Soft', 85000, 'qty-pijama-seda', 'size-pijama-seda')" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -198,11 +209,19 @@
                     </div>
                     <h3 class="text-lg font-semibold text-gray-800">Termo Stitch</h3>
                     <p class="text-gray-500 text-sm mb-3">Edición Especial</p>
-                    <div class="flex justify-between items-center">
+                    <div class="flex flex-col gap-2">
                         <span class="text-xl font-bold text-gray-900">$45.000</span>
-                        <button onclick="addToCart('Termo Stitch', 45000)" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
-                            <i class="fa-solid fa-cart-plus"></i>
-                        </button>
+                        <div class="flex justify-between items-center gap-2">
+                            <select id="size-termo-stitch" class="border border-gray-200 rounded-lg text-sm py-1 px-2 focus:border-brand outline-none bg-white w-24">
+                                <option value="Única">Única</option>
+                            </select>
+                            <div class="flex items-center gap-2">
+                                <input type="number" id="qty-termo-stitch" min="1" value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
+                                <button onclick="addToCart('Termo Stitch', 45000, 'qty-termo-stitch', 'size-termo-stitch')" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -213,11 +232,19 @@
                     </div>
                     <h3 class="text-lg font-semibold text-gray-800">Medias Pattern</h3>
                     <p class="text-gray-500 text-sm mb-3">Diseños divertidos</p>
-                    <div class="flex justify-between items-center">
+                    <div class="flex flex-col gap-2">
                         <span class="text-xl font-bold text-gray-900">$15.000</span>
-                        <button onclick="addToCart('Medias Pattern', 15000)" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
-                            <i class="fa-solid fa-cart-plus"></i>
-                        </button>
+                        <div class="flex justify-between items-center gap-2">
+                            <select id="size-medias-pattern" class="border border-gray-200 rounded-lg text-sm py-1 px-2 focus:border-brand outline-none bg-white w-24">
+                                <option value="Única">Única</option>
+                            </select>
+                            <div class="flex items-center gap-2">
+                                <input type="number" id="qty-medias-pattern" min="1" value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
+                                <button onclick="addToCart('Medias Pattern', 15000, 'qty-medias-pattern', 'size-medias-pattern')" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -229,11 +256,19 @@
                     </div>
                     <h3 class="text-lg font-semibold text-gray-800">Kit Regalo Pareja</h3>
                     <p class="text-gray-500 text-sm mb-3">2 Termos + 2 Medias</p>
-                    <div class="flex justify-between items-center">
+                    <div class="flex flex-col gap-2">
                         <span class="text-xl font-bold text-gray-900">$110.000</span>
-                        <button onclick="addToCart('Kit Regalo Pareja', 110000)" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
-                            <i class="fa-solid fa-cart-plus"></i>
-                        </button>
+                        <div class="flex justify-between items-center gap-2">
+                            <select id="size-kit-regalo" class="border border-gray-200 rounded-lg text-sm py-1 px-2 focus:border-brand outline-none bg-white w-24">
+                                <option value="Única">Única</option>
+                            </select>
+                            <div class="flex items-center gap-2">
+                                <input type="number" id="qty-kit-regalo" min="1" value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
+                                <button onclick="addToCart('Kit Regalo Pareja', 110000, 'qty-kit-regalo', 'size-kit-regalo')" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -244,11 +279,21 @@
                     </div>
                     <h3 class="text-lg font-semibold text-gray-800">Pijama Verano</h3>
                     <p class="text-gray-500 text-sm mb-3">Frescura total</p>
-                    <div class="flex justify-between items-center">
+                    <div class="flex flex-col gap-2">
                         <span class="text-xl font-bold text-gray-900">$80.000</span>
-                        <button onclick="addToCart('Pijama Verano', 80000)" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition">
-                            <i class="fa-solid fa-cart-plus"></i>
-                        </button>
+                        <div class="flex justify-between items-center gap-2">
+                            <select id="size-pijama-verano" class="border border-gray-200 rounded-lg text-sm py-1 px-2 focus:border-brand outline-none bg-white w-24">
+                                <option value="S">Talla S</option>
+                                <option value="M">Talla M</option>
+                                <option value="L">Talla L</option>
+                            </select>
+                            <div class="flex items-center gap-2">
+                                <input type="number" id="qty-pijama-verano" min="1" value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
+                                <button onclick="addToCart('Pijama Verano', 80000, 'qty-pijama-verano', 'size-pijama-verano')" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
+                                    <i class="fa-solid fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -386,22 +431,43 @@
     <script>
         let cart = [];
 
-        function addToCart(name, price) {
-            cart.push({ name, price });
+        function addToCart(name, price, qtyId, sizeId) {
+            const qtyInput = document.getElementById(qtyId);
+            const sizeInput = document.getElementById(sizeId);
+            const qty = parseInt(qtyInput.value);
+            const size = sizeInput.value;
+
+            if(isNaN(qty) || qty < 1) {
+                alert("Por favor ingresa una cantidad válida");
+                return;
+            }
+
+            // Verificar si el producto con la misma talla ya está en el carrito
+            const existingItem = cart.find(item => item.name === name && item.size === size);
+            if (existingItem) {
+                existingItem.qty += qty;
+            } else {
+                cart.push({ name, price, qty, size });
+            }
+            
             updateCartUI();
             // Efecto visual simple
             const btn = event.currentTarget;
             const originalHTML = btn.innerHTML;
             btn.innerHTML = '<i class="fa-solid fa-check"></i>';
-            btn.classList.add('bg-green-500', 'text-white');
+            btn.classList.remove('bg-gray-900');
+            btn.classList.add('bg-green-500');
             setTimeout(() => {
                 btn.innerHTML = originalHTML;
-                btn.classList.remove('bg-green-500', 'text-white');
+                btn.classList.remove('bg-green-500');
+                btn.classList.add('bg-gray-900');
             }, 1000);
         }
 
         function updateCartUI() {
-            document.getElementById('cart-count').innerText = cart.length;
+            // Sumar todas las cantidades para el contador rojo
+            const totalCount = cart.reduce((acc, item) => acc + item.qty, 0);
+            document.getElementById('cart-count').innerText = totalCount;
         }
 
         function toggleCart() {
@@ -422,12 +488,13 @@
                 container.innerHTML = '<div class="text-center py-8"><i class="fa-solid fa-basket-shopping text-4xl text-gray-300 mb-3"></i><p class="text-gray-500">Tu carrito está vacío.</p></div>';
             } else {
                 cart.forEach((item, index) => {
-                    total += item.price;
+                    const itemTotal = item.price * item.qty;
+                    total += itemTotal;
                     container.innerHTML += `
                         <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm border border-gray-100">
                             <div>
-                                <p class="font-semibold text-sm text-gray-800">${item.name}</p>
-                                <p class="text-brand text-xs font-bold">$${item.price.toLocaleString()}</p>
+                                <p class="font-semibold text-sm text-gray-800">${item.name} <span class="text-gray-500 text-xs">(${item.size})</span> <span class="text-brand text-xs ml-1 font-bold">x${item.qty}</span></p>
+                                <p class="text-gray-500 text-xs font-bold">$${itemTotal.toLocaleString()}</p>
                             </div>
                             <button onclick="removeFromCart(${index})" class="text-gray-400 hover:text-red-500 transition p-1">
                                 <i class="fa-solid fa-trash-can"></i>
@@ -462,8 +529,9 @@
             let message = `Hola TínStore! 👋 Quiero realizar el siguiente pedido:%0A%0A`;
             let total = 0;
             cart.forEach(item => {
-                message += `▪️ ${item.name} - $${item.price.toLocaleString()}%0A`;
-                total += item.price;
+                const itemTotal = item.price * item.qty;
+                message += `▪️ ${item.name} [${item.size}] (x${item.qty}) - $${itemTotal.toLocaleString()}%0A`;
+                total += itemTotal;
             });
             
             message += `%0A💰 *Total: $${total.toLocaleString()}*%0A%0A`;
