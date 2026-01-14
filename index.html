@@ -10,18 +10,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <!-- Configuración de Tailwind -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            light: '#eef2ff', // Índigo muy suave (Calma y limpieza)
-                            DEFAULT: '#6366f1', // Índigo Vibrante (Modernidad y confianza)
-                            dark: '#312e81', // Índigo Profundo (Elegancia)
+                            light: '#eef2ff',
+                            DEFAULT: '#6366f1',
+                            dark: '#312e81',
                         }
                     },
                     fontFamily: {
@@ -31,13 +29,10 @@
             }
         }
     </script>
-    <style>
-        .scroll-hidden::-webkit-scrollbar { display: none; }
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-        }
-    </style>
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans overflow-x-hidden">
 
@@ -57,6 +52,7 @@
                     <a href="#inicio" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-brand font-medium transition duration-300">Inicio</a>
                     <a href="#coleccion" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-brand font-medium transition duration-300">Colección</a>
                     <a href="nosotros.html" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-brand font-medium transition duration-300">Nosotros</a>
+                    <button onclick="window.print()" class="px-4 py-2 rounded-full border border-brand text-brand hover:bg-brand hover:text-white font-medium transition duration-300"><i class="fa-solid fa-file-pdf mr-2"></i>Catálogo</button>
                 </div>
 
                 <!-- Iconos Acción -->
@@ -80,6 +76,7 @@
                 <a href="#inicio" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50 border-b border-gray-50">Inicio</a>
                 <a href="#coleccion" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50 border-b border-gray-50">Colección</a>
                 <a href="nosotros.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50">Nosotros</a>
+                <button onclick="window.print()" class="w-full text-left px-3 py-3 rounded-md text-base font-medium text-brand hover:bg-gray-50"><i class="fa-solid fa-file-pdf mr-2"></i>Descargar Catálogo</button>
             </div>
         </div>
     </nav>
@@ -101,7 +98,7 @@
                         <a href="#coleccion" class="px-8 py-3 bg-brand text-white font-semibold rounded-full shadow-lg hover:bg-brand-dark transition transform hover:-translate-y-1">
                             Ver Productos
                         </a>
-                        <a href="https://wa.me/573000000000" target="_blank" class="px-8 py-3 bg-white text-brand border border-brand font-semibold rounded-full hover:bg-brand-light transition">
+                        <a href="https://wa.me/+573226942830" target="_blank" class="px-8 py-3 bg-white text-brand border border-brand font-semibold rounded-full hover:bg-brand-light transition">
                             Escribir al WhatsApp
                         </a>
                     </div>
@@ -130,26 +127,26 @@
     </section>
 
     <!-- Categorías -->
-    <section class="py-12 bg-white">
+    <section id="seccion-categorias" class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-bold text-center mb-10">Nuestras Categorías</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
+                <div onclick="selectCategory('medias')" class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
                     <img src="imagenes/descarga (3).jpg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Medias">
                     <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
                         <h3 class="text-white text-2xl font-bold">Medias</h3>
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
+                <div onclick="selectCategory('termos')" class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
                     <img src="imagenes/images.jpg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Termos">
                     <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
                         <h3 class="text-white text-2xl font-bold">Termos</h3>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
+                <div onclick="selectCategory('pijamas')" class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
                     <img src="imagenes/descarga (2).jpg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Pijamas">
                     <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
                         <h3 class="text-white text-2xl font-bold">Pijamas</h3>
@@ -175,133 +172,13 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Producto 1 -->
-                <div class="product-card pijama bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
-                    <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
-                        <img src="imagenes/descarga (2).jpg" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="Pijama">
-                        <span class="absolute top-2 left-2 bg-brand text-white text-xs font-bold px-2 py-1 rounded">Nuevo</span>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800">Pijama Seda Soft</h3>
-                    <p class="text-gray-500 text-sm mb-3">Tacto suave y fresco</p>
-                    <div class="flex flex-col gap-2">
-                        <span class="text-xl font-bold text-gray-900">$85.000</span>
-                        <div class="flex justify-between items-center gap-2">
-                            <select id="size-pijama-seda" class="border border-gray-200 rounded-lg text-sm py-1 px-2 focus:border-brand outline-none bg-white w-24">
-                                <option value="S">Talla S</option>
-                                <option value="M">Talla M</option>
-                                <option value="L">Talla L</option>
-                            </select>
-                            <div class="flex items-center gap-2">
-                                <input type="number" id="qty-pijama-seda" min="1" value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
-                                <button onclick="addToCart('Pijama Seda Soft', 85000, 'qty-pijama-seda', 'size-pijama-seda')" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
-                                    <i class="fa-solid fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 2 -->
-                <div class="product-card termos bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
-                    <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
-                        <img src="imagenes/images.jpg" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="Termo">
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800">Termo Stitch</h3>
-                    <p class="text-gray-500 text-sm mb-3">Edición Especial</p>
-                    <div class="flex flex-col gap-2">
-                        <span class="text-xl font-bold text-gray-900">$45.000</span>
-                        <div class="flex justify-between items-center gap-2">
-                            <select id="size-termo-stitch" class="border border-gray-200 rounded-lg text-sm py-1 px-2 focus:border-brand outline-none bg-white w-24">
-                                <option value="Única">Única</option>
-                            </select>
-                            <div class="flex items-center gap-2">
-                                <input type="number" id="qty-termo-stitch" min="1" value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
-                                <button onclick="addToCart('Termo Stitch', 45000, 'qty-termo-stitch', 'size-termo-stitch')" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
-                                    <i class="fa-solid fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 3 -->
-                <div class="product-card medias bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
-                    <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
-                        <img src="imagenes/descarga (3).jpg" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="Medias">
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800">Medias Pattern</h3>
-                    <p class="text-gray-500 text-sm mb-3">Diseños divertidos</p>
-                    <div class="flex flex-col gap-2">
-                        <span class="text-xl font-bold text-gray-900">$15.000</span>
-                        <div class="flex justify-between items-center gap-2">
-                            <select id="size-medias-pattern" class="border border-gray-200 rounded-lg text-sm py-1 px-2 focus:border-brand outline-none bg-white w-24">
-                                <option value="Única">Única</option>
-                            </select>
-                            <div class="flex items-center gap-2">
-                                <input type="number" id="qty-medias-pattern" min="1" value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
-                                <button onclick="addToCart('Medias Pattern', 15000, 'qty-medias-pattern', 'size-medias-pattern')" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
-                                    <i class="fa-solid fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 4 -->
-                <div class="product-card pijama termos medias bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
-                    <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
-                        <img src="imagenes/descarga (1).jpg" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="Kit">
-                        <span class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">-10%</span>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800">Kit Regalo Pareja</h3>
-                    <p class="text-gray-500 text-sm mb-3">2 Termos + 2 Medias</p>
-                    <div class="flex flex-col gap-2">
-                        <span class="text-xl font-bold text-gray-900">$110.000</span>
-                        <div class="flex justify-between items-center gap-2">
-                            <select id="size-kit-regalo" class="border border-gray-200 rounded-lg text-sm py-1 px-2 focus:border-brand outline-none bg-white w-24">
-                                <option value="Única">Única</option>
-                            </select>
-                            <div class="flex items-center gap-2">
-                                <input type="number" id="qty-kit-regalo" min="1" value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
-                                <button onclick="addToCart('Kit Regalo Pareja', 110000, 'qty-kit-regalo', 'size-kit-regalo')" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
-                                    <i class="fa-solid fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 5 (Extra para rellenar) -->
-                <div class="product-card pijama bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
-                    <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
-                        <img src="imagenes/descarga (2).jpg" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="Pijama">
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800">Pijama Verano</h3>
-                    <p class="text-gray-500 text-sm mb-3">Frescura total</p>
-                    <div class="flex flex-col gap-2">
-                        <span class="text-xl font-bold text-gray-900">$80.000</span>
-                        <div class="flex justify-between items-center gap-2">
-                            <select id="size-pijama-verano" class="border border-gray-200 rounded-lg text-sm py-1 px-2 focus:border-brand outline-none bg-white w-24">
-                                <option value="S">Talla S</option>
-                                <option value="M">Talla M</option>
-                                <option value="L">Talla L</option>
-                            </select>
-                            <div class="flex items-center gap-2">
-                                <input type="number" id="qty-pijama-verano" min="1" value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
-                                <button onclick="addToCart('Pijama Verano', 80000, 'qty-pijama-verano', 'size-pijama-verano')" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
-                                    <i class="fa-solid fa-cart-plus"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Contenedor donde JS inyectará los productos -->
+            <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
         </div>
     </section>
 
     <!-- Sección de Pago Seguro (PSE) -->
-    <section class="py-12 bg-white border-t border-gray-100">
+    <section id="seccion-pagos" class="py-12 bg-white border-t border-gray-100">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h3 class="text-xl font-semibold text-gray-800 mb-6">Pagos seguros y fáciles</h3>
             <div class="flex justify-center items-center gap-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-500">
@@ -338,7 +215,7 @@
             </div>
             <div>
                 <h4 class="text-lg font-semibold mb-4">Contáctanos</h4>
-                <p class="text-gray-400 text-sm mb-2"><i class="fa-brands fa-whatsapp mr-2"></i> +57 300 000 0000</p>
+                <p class="text-gray-400 text-sm mb-2"><i class="fa-brands fa-whatsapp mr-2"></i> +57 322 694 2830</p>
                 <p class="text-gray-400 text-sm"><i class="fa-solid fa-envelope mr-2"></i> lina-riveros.com</p>
             </div>
         </div>
@@ -348,7 +225,7 @@
     </footer>
 
     <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/573000000000?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" 
+    <a href="https://wa.me/+573226942830?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" 
        target="_blank"
        class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 flex items-center justify-center">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
@@ -391,158 +268,7 @@
         </div>
     </div>
 
-    <!-- Script para el Carrusel -->
-    <script>
-        const carouselSlides = document.querySelectorAll('#hero-carousel > div');
-        let activeSlide = 0;
-        setInterval(() => {
-            carouselSlides[activeSlide].classList.remove('opacity-100');
-            carouselSlides[activeSlide].classList.add('opacity-0');
-            activeSlide = (activeSlide + 1) % carouselSlides.length;
-            carouselSlides[activeSlide].classList.remove('opacity-0');
-            carouselSlides[activeSlide].classList.add('opacity-100');
-        }, 3500); // Cambia cada 3.5 segundos
-    </script>
-
-    <!-- Script para Filtros -->
-    <script>
-        function filterSelection(category, btn) {
-            const cards = document.querySelectorAll('.product-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.classList.contains(category)) {
-                    card.classList.remove('hidden');
-                } else {
-                    card.classList.add('hidden');
-                }
-            });
-
-            // Actualizar botones
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(b => {
-                b.classList.remove('bg-brand', 'text-white', 'border-brand');
-                b.classList.add('text-gray-600', 'border-gray-200', 'bg-white');
-            });
-            btn.classList.remove('text-gray-600', 'border-gray-200', 'bg-white');
-            btn.classList.add('bg-brand', 'text-white', 'border-brand');
-        }
-    </script>
-
-    <!-- Script del Carrito -->
-    <script>
-        let cart = [];
-
-        function addToCart(name, price, qtyId, sizeId) {
-            const qtyInput = document.getElementById(qtyId);
-            const sizeInput = document.getElementById(sizeId);
-            const qty = parseInt(qtyInput.value);
-            const size = sizeInput.value;
-
-            if(isNaN(qty) || qty < 1) {
-                alert("Por favor ingresa una cantidad válida");
-                return;
-            }
-
-            // Verificar si el producto con la misma talla ya está en el carrito
-            const existingItem = cart.find(item => item.name === name && item.size === size);
-            if (existingItem) {
-                existingItem.qty += qty;
-            } else {
-                cart.push({ name, price, qty, size });
-            }
-            
-            updateCartUI();
-            // Efecto visual simple
-            const btn = event.currentTarget;
-            const originalHTML = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-check"></i>';
-            btn.classList.remove('bg-gray-900');
-            btn.classList.add('bg-green-500');
-            setTimeout(() => {
-                btn.innerHTML = originalHTML;
-                btn.classList.remove('bg-green-500');
-                btn.classList.add('bg-gray-900');
-            }, 1000);
-        }
-
-        function updateCartUI() {
-            // Sumar todas las cantidades para el contador rojo
-            const totalCount = cart.reduce((acc, item) => acc + item.qty, 0);
-            document.getElementById('cart-count').innerText = totalCount;
-        }
-
-        function toggleCart() {
-            const modal = document.getElementById('cart-modal');
-            modal.classList.toggle('hidden');
-            if (!modal.classList.contains('hidden')) {
-                renderCartItems();
-            }
-        }
-
-        function renderCartItems() {
-            const container = document.getElementById('cart-items');
-            const totalElem = document.getElementById('cart-total');
-            container.innerHTML = '';
-            let total = 0;
-
-            if (cart.length === 0) {
-                container.innerHTML = '<div class="text-center py-8"><i class="fa-solid fa-basket-shopping text-4xl text-gray-300 mb-3"></i><p class="text-gray-500">Tu carrito está vacío.</p></div>';
-            } else {
-                cart.forEach((item, index) => {
-                    const itemTotal = item.price * item.qty;
-                    total += itemTotal;
-                    container.innerHTML += `
-                        <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm border border-gray-100">
-                            <div>
-                                <p class="font-semibold text-sm text-gray-800">${item.name} <span class="text-gray-500 text-xs">(${item.size})</span> <span class="text-brand text-xs ml-1 font-bold">x${item.qty}</span></p>
-                                <p class="text-gray-500 text-xs font-bold">$${itemTotal.toLocaleString()}</p>
-                            </div>
-                            <button onclick="removeFromCart(${index})" class="text-gray-400 hover:text-red-500 transition p-1">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </div>
-                    `;
-                });
-            }
-            totalElem.innerText = '$' + total.toLocaleString();
-        }
-
-        function removeFromCart(index) {
-            cart.splice(index, 1);
-            renderCartItems();
-            updateCartUI();
-        }
-
-        function sendOrder() {
-            const name = document.getElementById('customer-name').value;
-            const address = document.getElementById('customer-address').value;
-            const phone = document.getElementById('customer-phone').value;
-
-            if (cart.length === 0) {
-                alert('Agrega productos al carrito primero.');
-                return;
-            }
-            if (!name || !address || !phone) {
-                alert('Por favor completa tus datos de envío.');
-                return;
-            }
-
-            let message = `Hola TínStore! 👋 Quiero realizar el siguiente pedido:%0A%0A`;
-            let total = 0;
-            cart.forEach(item => {
-                const itemTotal = item.price * item.qty;
-                message += `▪️ ${item.name} [${item.size}] (x${item.qty}) - $${itemTotal.toLocaleString()}%0A`;
-                total += itemTotal;
-            });
-            
-            message += `%0A💰 *Total: $${total.toLocaleString()}*%0A%0A`;
-            message += `📍 *Datos de Envío:*%0A`;
-            message += `👤 Nombre: ${name}%0A`;
-            message += `🏠 Dirección: ${address}%0A`;
-            message += `📱 Teléfono: ${phone}`;
-
-            window.open(`https://wa.me/573000000000?text=${message}`, '_blank');
-        }
-    </script>
-
+    <!-- Lógica Principal -->
+    <script src="script.js"></script>
 </body>
 </html>

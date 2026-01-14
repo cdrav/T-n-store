@@ -1,0 +1,78 @@
+.scroll-hidden::-webkit-scrollbar { display: none; }
+.glass-effect {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+/* --- Estilos para Generar Catálogo PDF --- */
+@media print {
+    /* Ocultar elementos innecesarios en el PDF */
+    nav, footer, #hero-carousel, #inicio, .fixed, #cart-modal, .filter-btn, button, a[href^="https://wa.me"], #seccion-pagos, #seccion-categorias {
+        display: none !important;
+    }
+
+    /* Ocultar selectores de talla/cantidad en las tarjetas de producto */
+    .product-card select, 
+    .product-card input[type="number"], 
+    .product-card button {
+        display: none !important;
+    }
+
+    /* Ajustar el contenedor de productos para papel */
+    html, body { 
+        background: white; 
+        color: black;
+        overflow: visible !important; /* Permite que el contenido fluya en varias páginas */
+        height: auto !important;
+    }
+    
+    /* Asegurar que las imágenes de productos se vean */
+    img {
+        display: block !important;
+        max-width: 100% !important;
+    }
+    #products-container {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; /* 3 productos por fila */
+        gap: 20px !important;
+        padding-top: 20px !important;
+    }
+
+    .product-card {
+        box-shadow: none !important;
+        border: 1px solid #ddd;
+        page-break-inside: avoid; /* Evita que una tarjeta se corte entre páginas */
+    }
+    
+    /* Agregar encabezado al PDF */
+    body::before {
+        content: "TÍNSTORE\A Catálogo Oficial 2026\A Estilo, Confort y Calidad";
+        white-space: pre;
+        font-family: serif;
+        font-size: 32pt;
+        font-weight: bold;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        text-align: center;
+        display: block;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #312e81;
+        color: #312e81;
+    }
+
+    /* Agregar pie de página con instrucciones */
+    body::after {
+        content: "Gracias por tu preferencia. Haz tu pedido fácilmente al WhatsApp +57 322 694 2830.";
+        position: fixed;
+        bottom: 15px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 10pt;
+        color: #333;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+        background: white;
+    }
+}
