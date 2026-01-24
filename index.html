@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TínStore | Estilo & Confort</title>
     <meta name="description" content="Descubre la mejor colección de pijamas, termos y medias en TínStore. Comodidad y estilo para tu día a día.">
+    <meta name="keywords" content="pijamas, termos, medias, regalos, tienda online, colombia, estilo, confort">
+    <link rel="canonical" href="https://tinstore.online/" />
     <!-- Tailwind CSS para diseño moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -41,10 +43,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center cursor-pointer">
-                    <span class="text-2xl font-bold text-brand-dark tracking-tighter">
-                        <i class="fa-solid fa-bag-shopping text-brand mr-2"></i>TínStore
-                    </span>
+                <div class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <!-- Icono en caja moderna -->
+                    <div class="bg-brand text-white w-10 h-10 flex items-center justify-center rounded-xl shadow-md transform group-hover:rotate-12 transition duration-300 mr-2">
+                        <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    </div>
+                    <!-- Tipografía Elegante: Bold + Light -->
+                    <span class="text-2xl font-bold text-gray-900 tracking-tight">Tín<span class="text-brand font-light">Store</span></span>
                 </div>
                 
                 <!-- Menú Desktop -->
@@ -98,7 +103,7 @@
                         <a href="#coleccion" class="px-8 py-3 bg-brand text-white font-semibold rounded-full shadow-lg hover:bg-brand-dark transition transform hover:-translate-y-1">
                             Ver Productos
                         </a>
-                        <a href="https://wa.me/+573226942830" target="_blank" class="px-8 py-3 bg-white text-brand border border-brand font-semibold rounded-full hover:bg-brand-light transition">
+                        <a href="https://wa.me/573226942830" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-white text-brand border border-brand font-semibold rounded-full hover:bg-brand-light transition">
                             Escribir al WhatsApp
                         </a>
                     </div>
@@ -216,7 +221,7 @@
             <div>
                 <h4 class="text-lg font-semibold mb-4">Contáctanos</h4>
                 <p class="text-gray-400 text-sm mb-2"><i class="fa-brands fa-whatsapp mr-2"></i> +57 322 694 2830</p>
-                <p class="text-gray-400 text-sm"><i class="fa-solid fa-envelope mr-2"></i> lina-riveros.com</p>
+                <p class="text-gray-400 text-sm"><i class="fa-solid fa-envelope mr-2"></i> contacto@tinstore.online</p>
             </div>
         </div>
         <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-xs">
@@ -225,8 +230,9 @@
     </footer>
 
     <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/+573226942830?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" 
+    <a href="https://wa.me/573226942830?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" 
        target="_blank"
+       rel="noopener noreferrer"
        class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 flex items-center justify-center">
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
@@ -265,6 +271,22 @@
                     <i class="fa-brands fa-whatsapp text-xl"></i>
                 </button>
             </div>
+        </div>
+    </div>
+
+    <!-- Modal de Próxima Apertura (Aviso Amigable) -->
+    <div id="coming-soon-modal" class="fixed inset-0 bg-gray-50 z-[100] flex justify-center items-center p-4 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center relative transform scale-100 transition-transform duration-300">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-light to-brand"></div>
+            <div class="mb-6 inline-block p-4 rounded-full bg-brand-light text-brand">
+                <i class="fa-solid fa-wand-magic-sparkles text-4xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-3">¡Estamos Renovando! ✨</h2>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+                Bienvenido a <b>TínStore</b>. En este momento estamos <b>actualizando nuestros precios y catálogo</b> para ofrecerte lo mejor.
+                <br><br>
+                La tienda estará disponible muy pronto. ¡Gracias por tu paciencia y preferencia!
+            </p>
         </div>
     </div>
 

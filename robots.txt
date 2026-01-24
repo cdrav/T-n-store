@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tinstore.online/sitemap.xml

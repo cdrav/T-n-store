@@ -1,4 +1,10 @@
 // --- 1. Datos de Productos ---
+const CONFIG = {
+    phoneNumber: '573226942830', // Número único para todo el sitio (sin el + para la API)
+    storeName: 'TínStore',
+    currency: '$'
+};
+
 const products = [
     // --- Pijamas ---
     {
@@ -200,6 +206,12 @@ try {
 function addToCart(name, price, qtyId, sizeId, btnElement) {
     const qtyInput = document.getElementById(qtyId);
     const sizeInput = document.getElementById(sizeId);
+
+    if (!qtyInput || !sizeInput) {
+        console.error("Error: No se encontraron los elementos de entrada.");
+        return;
+    }
+
     const qty = parseInt(qtyInput.value);
     const size = sizeInput.value;
 
@@ -260,10 +272,10 @@ function renderCartItems() {
     if (cart.length === 0) {
         container.innerHTML = '<div class="text-center py-8"><i class="fa-solid fa-basket-shopping text-4xl text-gray-300 mb-3"></i><p class="text-gray-500">Tu carrito está vacío.</p></div>';
     } else {
-        cart.forEach((item, index) => {
+        const itemsHTML = cart.map((item, index) => {
             const itemTotal = item.price * item.qty;
             total += itemTotal;
-            container.innerHTML += `
+            return `
                 <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm border border-gray-100">
                     <div>
                         <p class="font-semibold text-sm text-gray-800">${item.name} <span class="text-gray-500 text-xs">(${item.size})</span> <span class="text-brand text-xs ml-1 font-bold">x${item.qty}</span></p>
@@ -272,9 +284,9 @@ function renderCartItems() {
                     <button onclick="removeFromCart(${index})" class="text-gray-400 hover:text-red-500 transition p-1">
                         <i class="fa-solid fa-trash-can"></i>
                     </button>
-                </div>
-            `;
-        });
+                </div>`;
+        }).join('');
+        container.innerHTML = itemsHTML;
     }
     totalElem.innerText = '$' + total.toLocaleString();
 }
@@ -322,7 +334,7 @@ function sendOrder() {
     message += `📱 Contacto: ${phone}%0A%0A`;
     message += `_Espero confirmación para realizar el pago. Gracias!_`;
 
-    window.open(`https://wa.me/+573226942830?text=${message}`, '_blank');
+    window.open(`https://wa.me/${CONFIG.phoneNumber}?text=${message}`, '_blank');
 }
 
 // --- 4. Funciones de Renderizado y Filtros ---

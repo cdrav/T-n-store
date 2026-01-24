@@ -34,10 +34,11 @@
     <nav class="fixed top-0 w-full z-50 glass-effect shadow-sm transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer">
-                    <span class="text-2xl font-bold text-brand-dark tracking-tighter">
-                        <i class="fa-solid fa-bag-shopping text-brand mr-2"></i>TínStore
-                    </span>
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <div class="bg-brand text-white w-10 h-10 flex items-center justify-center rounded-xl shadow-md transform group-hover:rotate-12 transition duration-300 mr-2">
+                        <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-900 tracking-tight">Tín<span class="text-brand font-light">Store</span></span>
                 </a>
                 
                 <div class="hidden md:flex space-x-8">
@@ -93,13 +94,23 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-gray-500 text-xs">&copy; 2026 Desarrollado por Cristian Ruiz. Todos los derechos reservados.</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h4 class="text-xl font-bold mb-2">TínStore</h4>
+                <p class="text-gray-400 text-sm">Estilo y confort en cada detalle.</p>
+            </div>
+            <div class="text-center md:text-right">
+                <p class="text-gray-400 text-sm mb-1"><i class="fa-brands fa-whatsapp mr-2"></i> +57 322 694 2830</p>
+                <p class="text-gray-400 text-sm"><i class="fa-solid fa-envelope mr-2"></i> contacto@tinstore.online</p>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-xs">
+            &copy; 2026 Desarrollado por Cristian Ruiz. Todos los derechos reservados.
         </div>
     </footer>
 
     <!-- WhatsApp -->
-    <a href="https://wa.me/+573226942830" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 flex items-center justify-center"><i class="fa-brands fa-whatsapp text-3xl"></i></a>
+    <a href="https://wa.me/573226942830" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 flex items-center justify-center"><i class="fa-brands fa-whatsapp text-3xl"></i></a>
     <!-- Lógica Principal -->
     <script src="script.js"></script>
 </body>
