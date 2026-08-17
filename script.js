@@ -3,7 +3,9 @@ const CONFIG = {
     phoneNumber: '573017638046', // Número único para todo el sitio (sin el + para la API)
     storeName: 'TínStore',
     currency: '$',
-    wompiPublicKey: 'pub_prod_AwwLlOJmf0WNyRZwSuBrGB17lneUNbRF'
+    wompiPublicKey: 'pub_prod_AwwLlOJmf0WNyRZwSuBrGB17lneUNbRF',
+    // URL del Cloudflare Worker que calcula la firma de integridad (ver wompi-signature-worker.js)
+    wompiSignatureEndpoint: '' // TODO: pegar aquí la URL del Worker, ej: 'https://tinstore-wompi-signature.usuario.workers.dev'
 };
 
 const products = [
@@ -318,7 +320,7 @@ function sendOrder() {
     toggleCart();
 }
 
-function payWithWompi() {
+async function payWithWompi() {
     const name = document.getElementById('customer-name').value;
     const address = document.getElementById('customer-address').value;
     const phone = document.getElementById('customer-phone').value;
@@ -331,9 +333,28 @@ function payWithWompi() {
         alert('Por favor completa tus datos de envío.');
         return;
     }
+    if (!CONFIG.wompiSignatureEndpoint) {
+        alert('El pago con Wompi todavía no está completamente configurado. Por favor coordina tu pedido por WhatsApp mientras tanto.');
+        return;
+    }
 
     const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
     const reference = 'TINSTORE-' + Date.now();
+    const amountInCents = String(Math.round(total * 100));
+    const currency = 'COP';
+
+    let signature;
+    try {
+        const sigParams = new URLSearchParams({ reference, amount_in_cents: amountInCents, currency });
+        const res = await fetch(`${CONFIG.wompiSignatureEndpoint}?${sigParams.toString()}`);
+        const json = await res.json();
+        signature = json.signature;
+        if (!signature) throw new Error('Firma vacía');
+    } catch (e) {
+        console.error('No se pudo obtener la firma de integridad:', e);
+        alert('No pudimos preparar el pago en este momento. Por favor intenta de nuevo o coordina tu pedido por WhatsApp.');
+        return;
+    }
 
     // Guardamos el pedido para poder confirmarlo por WhatsApp cuando el cliente vuelva del pago
     localStorage.setItem('tinStore_pendingOrder', JSON.stringify({ cart, name, address, phone, reference, total }));
@@ -341,9 +362,10 @@ function payWithWompi() {
     const redirectUrl = window.location.origin + window.location.pathname + '?wompi_return=1';
     const params = new URLSearchParams({
         'public-key': CONFIG.wompiPublicKey,
-        'currency': 'COP',
-        'amount-in-cents': String(Math.round(total * 100)),
+        'currency': currency,
+        'amount-in-cents': amountInCents,
         'reference': reference,
+        'signature:integrity': signature,
         'redirect-url': redirectUrl
     });
 
