@@ -2,7 +2,8 @@
 const CONFIG = {
     phoneNumber: '573017638046', // Número único para todo el sitio (sin el + para la API)
     storeName: 'TínStore',
-    currency: '$'
+    currency: '$',
+    wompiPublicKey: 'pub_prod_AwwLlOJmf0WNyRZwSuBrGB17lneUNbRF'
 };
 
 const products = [
@@ -11,7 +12,7 @@ const products = [
         id: 'medias-cereza',
         name: 'Medias Cereza',
         category: 'medias',
-        price: 8000,
+        price: 9200,
         image: 'imagenes/media-cereza.jpeg',
         sizes: ['Única'],
         desc: 'Tobilleras con bordado de cerezas. Diseños surtidos, no se repiten.',
@@ -21,7 +22,7 @@ const products = [
         id: 'medias-stitch',
         name: 'Medias Stitch',
         category: 'medias',
-        price: 10000,
+        price: 11200,
         image: 'imagenes/media-stitch.jpeg',
         sizes: ['Única'],
         desc: 'Colección Stitch, 5 estampados diferentes. Diseño surtido al azar.',
@@ -32,7 +33,7 @@ const products = [
         id: 'medias-vaca',
         name: 'Medias Vaca',
         category: 'medias',
-        price: 6000,
+        price: 7100,
         image: 'imagenes/media-vaca-blanca.jpeg',
         sizes: ['Única'],
         desc: 'Estampado de vaquita, disponible en negra, rayas, blanca o "sweet milk". Diseño surtido al azar.',
@@ -42,7 +43,7 @@ const products = [
         id: 'medias-huellas',
         name: 'Medias Huellitas',
         category: 'medias',
-        price: 8000,
+        price: 9200,
         image: 'imagenes/media-huellas.jpeg',
         sizes: ['Única'],
         desc: 'Bordado de huellitas en negro, blanco o gris. Diseño surtido al azar.',
@@ -54,7 +55,7 @@ const products = [
         id: 'termo-stitch-azul',
         name: 'Termo Stitch Azul',
         category: 'termos',
-        price: 35000,
+        price: 37000,
         image: 'imagenes/termo-stitch-azul.jpeg',
         sizes: ['Única'],
         desc: 'Termo deportivo con correa, edición Stitch.',
@@ -65,7 +66,7 @@ const products = [
         id: 'termo-stitch-rosado',
         name: 'Termo Stitch Rosado',
         category: 'termos',
-        price: 35000,
+        price: 37000,
         image: 'imagenes/termo-stitch-rosado.jpeg',
         sizes: ['Única'],
         desc: 'Termo deportivo con correa, edición Stitch.',
@@ -77,7 +78,7 @@ const products = [
         id: 'pantuflas-gato-negro',
         name: 'Pantuflas Gato Negro',
         category: 'pantuflas',
-        price: 30000,
+        price: 31900,
         image: 'imagenes/pantuflas-gato-negro.jpeg',
         sizes: ['Única'],
         desc: 'Pantuflas afelpadas con bordado de gatito. Comodidad total para casa.',
@@ -90,7 +91,7 @@ const products = [
         id: 'reloj-smart',
         name: 'Reloj Inteligente Smart Watch',
         category: 'relojes',
-        price: 75000,
+        price: 78400,
         image: 'imagenes/reloj-smart.jpeg',
         sizes: ['Única'],
         desc: 'Smartwatch con notificaciones, llamadas y monitoreo de actividad.',
@@ -99,6 +100,19 @@ const products = [
         refImage: true
     }
 ];
+
+// Producto de prueba para verificar el pago con Wompi (no forma parte del catálogo real).
+// Solo se muestra visitando la página con ?test=1 en la URL.
+const TEST_PRODUCT = {
+    id: 'producto-prueba-wompi',
+    name: 'Producto de Prueba (Wompi)',
+    category: 'test',
+    price: 1000,
+    image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3QgZmlsbD0iIzViMjFiNiIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiLz48dGV4dCBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjUwJSIgeT0iNDUlIj5QUlVFQkE8L3RleHQ+PHRleHQgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjUwJSIgeT0iNjAlIj5ObyBlcyB1biBwcm9kdWN0byByZWFsPC90ZXh0Pjwvc3ZnPg==',
+    sizes: ['Única'],
+    desc: 'Producto oculto solo para probar el checkout de Wompi con un monto real pequeño.',
+    badge: 'SOLO PRUEBA'
+};
 
 // --- Información: Rastreo / Envíos / Cambios ---
 const INFO_CONTENT = {
@@ -153,7 +167,7 @@ try {
     localStorage.removeItem('tinStore_cart');
 }
 
-function addToCart(name, price, qtyId, sizeId, btnElement, stock) {
+function addToCart(id, name, price, qtyId, sizeId, btnElement, stock) {
     const qtyInput = document.getElementById(qtyId);
     const sizeInput = document.getElementById(sizeId);
 
@@ -170,7 +184,7 @@ function addToCart(name, price, qtyId, sizeId, btnElement, stock) {
         return;
     }
 
-    const existingItem = cart.find(item => item.name === name && item.size === size);
+    const existingItem = cart.find(item => item.id === id && item.size === size);
     const currentQtyInCart = existingItem ? existingItem.qty : 0;
 
     if (stock && (currentQtyInCart + qty) > stock) {
@@ -181,7 +195,7 @@ function addToCart(name, price, qtyId, sizeId, btnElement, stock) {
     if (existingItem) {
         existingItem.qty += qty;
     } else {
-        cart.push({ name, price, qty, size });
+        cart.push({ id, name, price, qty, size });
     }
     
     localStorage.setItem('tinStore_cart', JSON.stringify(cart));
@@ -273,25 +287,25 @@ function sendOrder() {
     const orderId = Math.floor(Math.random() * 10000) + 1;
     const date = new Date().toLocaleDateString();
 
-    let message = `*NUEVO PEDIDO WEB #ORD-${orderId}* 🛍️%0A`;
-    message += `📅 Fecha: ${date}%0A%0A`;
-    message += `*DETALLE DEL PEDIDO:*%0A---------------------------%0A`;
-    
+    let message = `*NUEVO PEDIDO WEB #ORD-${orderId}* 🛍️\n`;
+    message += `📅 Fecha: ${date}\n\n`;
+    message += `*DETALLE DEL PEDIDO:*\n---------------------------\n`;
+
     let total = 0;
     cart.forEach(item => {
         const itemTotal = item.price * item.qty;
-        message += `✅ *${item.name}*%0A   └ Talla: ${item.size} | Cant: ${item.qty} | $${itemTotal.toLocaleString()}%0A`;
+        message += `✅ *${item.name}*\n   └ Talla: ${item.size} | Cant: ${item.qty} | $${itemTotal.toLocaleString()}\n`;
         total += itemTotal;
     });
-    
-    message += `---------------------------%0A💰 *TOTAL A PAGAR: $${total.toLocaleString()}*%0A%0A`;
-    message += `📍 *DATOS DE ENVÍO:*%0A`;
-    message += `👤 Cliente: ${name}%0A`;
-    message += `🏠 Dirección: ${address}%0A`;
-    message += `📱 Contacto: ${phone}%0A%0A`;
+
+    message += `---------------------------\n💰 *TOTAL A PAGAR: $${total.toLocaleString()}*\n\n`;
+    message += `📍 *DATOS DE ENVÍO:*\n`;
+    message += `👤 Cliente: ${name}\n`;
+    message += `🏠 Dirección: ${address}\n`;
+    message += `📱 Contacto: ${phone}\n\n`;
     message += `_Espero confirmación para realizar el pago. Gracias!_`;
 
-    window.open(`https://wa.me/${CONFIG.phoneNumber}?text=${message}`, '_blank');
+    window.open(`https://wa.me/${CONFIG.phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
 
     // Vaciar carrito y formulario tras enviar el pedido
     cart = [];
@@ -302,6 +316,103 @@ function sendOrder() {
     updateCartUI();
     renderCartItems();
     toggleCart();
+}
+
+function payWithWompi() {
+    const name = document.getElementById('customer-name').value;
+    const address = document.getElementById('customer-address').value;
+    const phone = document.getElementById('customer-phone').value;
+
+    if (cart.length === 0) {
+        alert('Agrega productos al carrito primero.');
+        return;
+    }
+    if (!name || !address || !phone) {
+        alert('Por favor completa tus datos de envío.');
+        return;
+    }
+
+    const total = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+    const reference = 'TINSTORE-' + Date.now();
+
+    // Guardamos el pedido para poder confirmarlo por WhatsApp cuando el cliente vuelva del pago
+    localStorage.setItem('tinStore_pendingOrder', JSON.stringify({ cart, name, address, phone, reference, total }));
+
+    const redirectUrl = window.location.origin + window.location.pathname + '?wompi_return=1';
+    const params = new URLSearchParams({
+        'public-key': CONFIG.wompiPublicKey,
+        'currency': 'COP',
+        'amount-in-cents': String(Math.round(total * 100)),
+        'reference': reference,
+        'redirect-url': redirectUrl
+    });
+
+    window.location.href = 'https://checkout.wompi.co/p/?' + params.toString();
+}
+
+async function checkWompiReturn() {
+    const params = new URLSearchParams(window.location.search);
+    if (!params.has('wompi_return')) return;
+
+    // Limpiar la URL de inmediato para que un refresh no repita el proceso
+    window.history.replaceState({}, document.title, window.location.pathname);
+
+    const pendingRaw = localStorage.getItem('tinStore_pendingOrder');
+    if (!pendingRaw) return;
+
+    const pending = JSON.parse(pendingRaw);
+    const wompiTransactionId = params.get('id');
+
+    // Consultamos el estado real de la transacción con la llave pública (no revela datos sensibles)
+    let status = null;
+    if (wompiTransactionId) {
+        try {
+            const res = await fetch(`https://production.wompi.co/v1/transactions/${wompiTransactionId}`, {
+                headers: { 'Authorization': `Bearer ${CONFIG.wompiPublicKey}` }
+            });
+            const json = await res.json();
+            status = json && json.data ? json.data.status : null;
+        } catch (e) {
+            console.error('No se pudo verificar el estado de la transacción en Wompi:', e);
+        }
+    }
+
+    if (status === 'DECLINED' || status === 'ERROR' || status === 'VOIDED') {
+        localStorage.removeItem('tinStore_pendingOrder');
+        alert('Tu pago no fue aprobado por Wompi. Puedes intentarlo de nuevo o coordinar tu pedido por WhatsApp. Tu carrito sigue guardado.');
+        return;
+    }
+
+    const isConfirmed = status === 'APPROVED';
+    const header = isConfirmed
+        ? `*NUEVO PEDIDO WEB - PAGO CONFIRMADO* 🛍️💜✅`
+        : `*NUEVO PEDIDO WEB - PAGO EN VERIFICACIÓN* 🛍️💜⏳`;
+    const totalLabel = isConfirmed ? 'TOTAL PAGADO' : 'TOTAL A VERIFICAR';
+    const footerNote = isConfirmed
+        ? `_Pago verificado como aprobado en Wompi. ¡Gracias!_`
+        : `_No pude confirmar automáticamente el estado del pago. Por favor verifica la referencia en tu panel de Wompi antes de despachar._`;
+
+    let message = `${header}\n`;
+    message += `🔖 Referencia: ${pending.reference}\n`;
+    message += `🧾 ID transacción Wompi: ${wompiTransactionId || 'N/A'}\n\n`;
+    message += `*DETALLE DEL PEDIDO:*\n---------------------------\n`;
+    pending.cart.forEach(item => {
+        const itemTotal = item.price * item.qty;
+        message += `✅ *${item.name}*\n   └ Talla: ${item.size} | Cant: ${item.qty} | $${itemTotal.toLocaleString()}\n`;
+    });
+    message += `---------------------------\n💰 *${totalLabel}: $${pending.total.toLocaleString()}*\n\n`;
+    message += `📍 *DATOS DE ENVÍO:*\n`;
+    message += `👤 Cliente: ${pending.name}\n`;
+    message += `🏠 Dirección: ${pending.address}\n`;
+    message += `📱 Contacto: ${pending.phone}\n\n`;
+    message += footerNote;
+
+    localStorage.removeItem('tinStore_pendingOrder');
+    localStorage.removeItem('tinStore_cart');
+    cart = [];
+    updateCartUI();
+
+    window.open(`https://wa.me/${CONFIG.phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
 }
 
 // --- 4. Funciones de Renderizado y Filtros ---
@@ -315,7 +426,10 @@ function renderProducts() {
     const container = document.getElementById('products-container');
     if (!container) return;
 
-    container.innerHTML = products.map(product => {
+    const isTestMode = new URLSearchParams(window.location.search).has('test');
+    const list = isTestMode ? [TEST_PRODUCT, ...products] : products;
+
+    container.innerHTML = list.map(product => {
         const sizes = product.sizes || ['Única'];
         return `
         <div class="product-card ${product.category} bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
@@ -335,7 +449,7 @@ function renderProducts() {
                     </select>
                     <div class="flex items-center gap-2">
                         <input type="number" id="qty-${product.id}" min="1" ${product.stock ? `max="${product.stock}"` : ''} value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
-                        <button onclick="addToCart('${product.name}', ${product.price}, 'qty-${product.id}', 'size-${product.id}', this, ${product.stock || 'null'})" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
+                        <button onclick="addToCart('${product.id}', '${product.name}', ${product.price}, 'qty-${product.id}', 'size-${product.id}', this, ${product.stock || 'null'})" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
                             <i class="fa-solid fa-cart-plus"></i>
                         </button>
                     </div>
@@ -366,6 +480,7 @@ function filterSelection(category) {
 document.addEventListener('DOMContentLoaded', () => {
     renderProducts();
     updateCartUI();
+    checkWompiReturn();
 
     // Lógica del Carrusel (Solo si existe en la página)
     const carouselSlides = document.querySelectorAll('#hero-carousel > div');
