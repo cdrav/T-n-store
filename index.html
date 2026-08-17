@@ -5,34 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TínStore | Estilo & Confort</title>
-    <meta name="description" content="Descubre la mejor colección de pijamas, termos y medias en TínStore. Comodidad y estilo para tu día a día.">
-    <meta name="keywords" content="pijamas, termos, medias, regalos, tienda online, colombia, estilo, confort">
+    <meta name="description" content="Descubre medias temáticas, termos Stitch, pantuflas y más en TínStore. Comodidad y estilo para tu día a día.">
+    <meta name="keywords" content="medias, termos, pantuflas, relojes inteligentes, regalos, tienda online, colombia, estilo, confort">
     <link rel="canonical" href="https://tinstore.online/" />
-    <!-- Tailwind CSS para diseño moderno -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%236366f1'/%3E%3Cpath fill='%23fff' d='M8 8V6a4 4 0 1 1 8 0v2h2a1 1 0 0 1 1 1l-1 9a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1l-1-9a1 1 0 0 1 1-1h2Zm2 0h4V6a2 2 0 1 0-4 0v2Z'/%3E%3C/svg%3E">
+    <!-- Open Graph / redes sociales (WhatsApp, Facebook) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="TínStore">
+    <meta property="og:title" content="TínStore | Estilo & Confort">
+    <meta property="og:description" content="Descubre medias temáticas, termos Stitch, pantuflas y más en TínStore. Comodidad y estilo para tu día a día.">
+    <meta property="og:image" content="https://tinstore.online/imagenes/media-cereza.jpeg">
+    <meta property="og:url" content="https://tinstore.online/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TínStore | Estilo & Confort">
+    <meta name="twitter:description" content="Descubre medias temáticas, termos Stitch, pantuflas y más en TínStore.">
+    <meta name="twitter:image" content="https://tinstore.online/imagenes/media-cereza.jpeg">
+    <!-- Datos estructurados para buscadores -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "OnlineStore",
+        "name": "TínStore",
+        "url": "https://tinstore.online/",
+        "description": "Tienda online de medias temáticas, termos, pantuflas y accesorios con estilo y confort.",
+        "telephone": "+57 301 763 8046",
+        "email": "somos.tinstore@gmail.com",
+        "sameAs": [
+            "https://www.instagram.com/tinstoreoficial/",
+            "https://www.tiktok.com/@user80426244797"
+        ]
+    }
+    </script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Configuración de Tailwind -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            light: '#eef2ff',
-                            DEFAULT: '#6366f1',
-                            dark: '#312e81',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- CSS de Tailwind compilado y purgado (ver README/package.json: npm run build:css) -->
+    <link rel="stylesheet" href="tailwind.css?v=1786946202422">
+    <!-- Iconos (solo subconjuntos solid + brands, usados en el sitio) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css">
     <!-- Estilos Personalizados -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -40,6 +51,12 @@
 
     <!-- Navbar (Fijo y limpio) -->
     <nav class="fixed top-0 w-full z-50 glass-effect shadow-sm transition-all duration-300">
+        <!-- Barra de historia / causa social -->
+        <a href="nosotros.html" class="block bg-gradient-to-r from-brand to-brand-dark text-white text-center text-xs sm:text-sm font-medium py-2 px-4 hover:opacity-90 transition">
+            <i class="fa-solid fa-heart mr-1"></i>
+            <span class="hidden sm:inline">Un sueño que renace tras el terremoto en Roldanillo — </span>Conoce nuestra historia
+            <i class="fa-solid fa-arrow-right ml-1"></i>
+        </a>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
@@ -76,7 +93,7 @@
         </div>
 
         <!-- Menú Desplegable Móvil -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-20 shadow-lg">
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 w-full shadow-lg">
             <div class="px-4 pt-2 pb-4 space-y-1">
                 <a href="#inicio" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50 border-b border-gray-50">Inicio</a>
                 <a href="#coleccion" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50 border-b border-gray-50">Colección</a>
@@ -88,43 +105,45 @@
 
 
     <!-- Hero Section (Impacto visual) -->
-    <section id="inicio" class="relative pt-40 pb-16 overflow-hidden bg-gray-50 scroll-mt-24">
+    <section id="inicio" class="relative pt-52 pb-16 overflow-hidden bg-gray-50 scroll-mt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-left z-10">
-                    <span class="text-brand font-semibold tracking-wider uppercase text-sm">Nueva Colección 2026</span>
+                    <span class="text-brand font-semibold tracking-wider uppercase text-sm">Diseños que enamoran</span>
                     <h1 class="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 leading-tight">
-                        Comodidad que <br> <span class="text-brand">enamora</span>.
+                        Detalles que <br> <span class="text-brand">sacan sonrisas</span>.
                     </h1>
                     <p class="mt-4 text-lg text-gray-500 max-w-lg mx-auto lg:mx-0">
-                        Descubre nuestras medias con diseño, termos aesthetic y pijamas que te harán soñar. Calidad premium para tu día a día.
+                        Medias temáticas, termos Stitch, pantuflas y más — el regalo perfecto (o el capricho que te mereces) con estilo y calidad.
                     </p>
                     <div class="mt-8 flex justify-center lg:justify-start gap-4">
                         <a href="#coleccion" class="px-8 py-3 bg-brand text-white font-semibold rounded-full shadow-lg hover:bg-brand-dark transition transform hover:-translate-y-1">
                             Ver Productos
                         </a>
-                        <a href="https://wa.me/573226942830" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-white text-brand border border-brand font-semibold rounded-full hover:bg-brand-light transition">
+                        <a href="https://wa.me/573017638046" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-white text-brand border border-brand font-semibold rounded-full hover:bg-brand-light transition">
                             Escribir al WhatsApp
                         </a>
                     </div>
                 </div>
-                <!-- Imagen Hero (Placeholder de Unsplash) -->
+                <!-- Imagen Hero -->
                 <div class="relative h-96 w-full">
                     <div class="absolute inset-0 bg-brand-light rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
-                    <!-- Carrusel de Pijamas -->
-                    <div id="hero-carousel" class="relative h-full w-full rounded-2xl shadow-2xl overflow-hidden transform rotate-2 hover:rotate-0 transition duration-500">
+                    <!-- Carrusel de Productos -->
+                    <div id="hero-carousel" class="relative h-full w-full rounded-2xl shadow-2xl overflow-hidden ring-1 ring-black/5 transform rotate-2 hover:rotate-0 transition duration-500">
                         <!-- Slide 1 -->
                         <div class="absolute inset-0 transition-opacity duration-1000 opacity-100">
-                            <img src="imagenes/descarga (2).jpg" class="object-cover w-full h-full" alt="Pijama Modelo">
+                            <img src="imagenes/media-cereza.jpeg" class="object-cover w-full h-full" alt="Medias Cereza" fetchpriority="high">
                         </div>
                         <!-- Slide 2 -->
                         <div class="absolute inset-0 transition-opacity duration-1000 opacity-0">
-                            <img src="imagenes/descarga (3).jpg" class="object-cover w-full h-full" alt="Pijama Cozy">
+                            <img src="imagenes/pantuflas-gato-negro.jpeg" class="object-cover w-full h-full" alt="Pantuflas Gato Negro" loading="lazy">
                         </div>
                         <!-- Slide 3 -->
                         <div class="absolute inset-0 transition-opacity duration-1000 opacity-0">
-                            <img src="imagenes/images.jpg" class="object-cover w-full h-full" alt="Pijama Estilo">
+                            <img src="imagenes/termo-stitch-rosado.jpeg" class="object-cover w-full h-full" alt="Termo Stitch Rosado" loading="lazy">
                         </div>
+                        <!-- Overlay para unificar el tono entre fotos de distinto origen -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none"></div>
                     </div>
                 </div>
             </div>
@@ -135,26 +154,33 @@
     <section id="seccion-categorias" class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl font-bold text-center mb-10">Nuestras Categorías</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                 <!-- Card 1 -->
-                <div onclick="selectCategory('medias')" class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
-                    <img src="imagenes/descarga (3).jpg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Medias">
+                <div onclick="selectCategory('medias')" class="group relative overflow-hidden rounded-xl shadow-md ring-1 ring-black/5 cursor-pointer">
+                    <img src="imagenes/media-vaca-blanca.jpeg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Medias" loading="lazy">
                     <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
                         <h3 class="text-white text-2xl font-bold">Medias</h3>
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div onclick="selectCategory('termos')" class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
-                    <img src="imagenes/images.jpg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Termos">
+                <div onclick="selectCategory('termos')" class="group relative overflow-hidden rounded-xl shadow-md ring-1 ring-black/5 cursor-pointer">
+                    <img src="imagenes/termo-stitch-azul.jpeg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Termos" loading="lazy">
                     <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
                         <h3 class="text-white text-2xl font-bold">Termos</h3>
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div onclick="selectCategory('pijamas')" class="group relative overflow-hidden rounded-xl shadow-md cursor-pointer">
-                    <img src="imagenes/descarga (2).jpg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Pijamas">
+                <div onclick="selectCategory('pantuflas')" class="group relative overflow-hidden rounded-xl shadow-md ring-1 ring-black/5 cursor-pointer">
+                    <img src="imagenes/pantuflas-gato-negro.jpeg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Pantuflas" loading="lazy">
                     <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
-                        <h3 class="text-white text-2xl font-bold">Pijamas</h3>
+                        <h3 class="text-white text-2xl font-bold">Pantuflas</h3>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div onclick="selectCategory('relojes')" class="group relative overflow-hidden rounded-xl shadow-md ring-1 ring-black/5 cursor-pointer">
+                    <img src="imagenes/reloj-smart.jpeg" class="w-full h-64 object-cover sm:object-contain bg-white transition duration-500 group-hover:scale-110" alt="Relojes" loading="lazy">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-20 transition">
+                        <h3 class="text-white text-2xl font-bold">Relojes</h3>
                     </div>
                 </div>
             </div>
@@ -162,19 +188,12 @@
     </section>
 
     <!-- Productos Destacados -->
-    <section id="coleccion" class="py-16 bg-gray-50 scroll-mt-24">
+    <section id="coleccion" class="py-16 bg-gray-50 scroll-mt-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-900">Nuestra Colección</h2>
                 <p class="text-gray-500 mt-2">Diseños únicos para alegrar tu día</p>
-                
-                <!-- Filtros de Categoría -->
-                <div class="flex flex-wrap justify-center gap-3 mt-8">
-                    <button onclick="filterSelection('all', this)" class="filter-btn px-6 py-2 rounded-full border border-brand bg-brand text-white font-medium transition focus:outline-none shadow-sm">Todo</button>
-                    <button onclick="filterSelection('pijamas', this)" class="filter-btn px-6 py-2 rounded-full border border-gray-200 text-gray-600 bg-white hover:border-brand hover:text-brand font-medium transition focus:outline-none shadow-sm">Pijamas</button>
-                    <button onclick="filterSelection('termos', this)" class="filter-btn px-6 py-2 rounded-full border border-gray-200 text-gray-600 bg-white hover:border-brand hover:text-brand font-medium transition focus:outline-none shadow-sm">Termos</button>
-                    <button onclick="filterSelection('medias', this)" class="filter-btn px-6 py-2 rounded-full border border-gray-200 text-gray-600 bg-white hover:border-brand hover:text-brand font-medium transition focus:outline-none shadow-sm">Medias</button>
-                </div>
+                <button onclick="filterSelection('all')" class="mt-4 text-sm text-brand font-medium hover:underline">Ver todo</button>
             </div>
 
             <!-- Contenedor donde JS inyectará los productos -->
@@ -186,18 +205,13 @@
     <section id="seccion-pagos" class="py-12 bg-white border-t border-gray-100">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h3 class="text-xl font-semibold text-gray-800 mb-6">Pagos seguros y fáciles</h3>
-            <div class="flex justify-center items-center gap-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition duration-500">
-                <!-- Logo PSE Simulado -->
-                <div class="flex flex-col items-center">
-                    <img src="imagenes/logo-pse.png" alt="PSE" class="h-16 object-contain">
-                    <span class="text-xs text-gray-500 mt-2">Débito Bancario</span>
+            <div class="flex justify-center">
+                <div class="inline-flex flex-col items-center gap-2 px-6 py-3 rounded-xl border border-purple-100 bg-purple-50">
+                    <span class="text-2xl font-extrabold tracking-tight" style="color:#5B21B6">wompi</span>
+                    <span class="text-xs text-gray-500">PSE · Nequi · Tarjetas</span>
                 </div>
-                <!-- Otros métodos -->
-                <i class="fa-brands fa-cc-visa text-4xl text-blue-900"></i>
-                <i class="fa-brands fa-cc-mastercard text-4xl text-red-600"></i>
-                <i class="fa-solid fa-money-bill-wave text-4xl text-green-600"></i>
             </div>
-            <p class="mt-4 text-sm text-gray-400">Tus transacciones están protegidas con encriptación SSL.</p>
+            <p class="mt-4 text-sm text-gray-400">Pagos procesados de forma segura por Wompi al confirmar tu pedido.</p>
         </div>
     </section>
 
@@ -205,7 +219,7 @@
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-                <h4 class="text-xl font-bold mb-4">TuMarca</h4>
+                <h4 class="text-xl font-bold mb-4">TínStore</h4>
                 <p class="text-gray-400 text-sm">
                     Emprendimiento hecho con amor. Llevamos comodidad y estilo a la puerta de tu casa.
                 </p>
@@ -213,15 +227,19 @@
             <div>
                 <h4 class="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
                 <ul class="space-y-2 text-gray-400 text-sm">
-                    <li><a href="#" class="hover:text-brand transition">Rastrear Pedido</a></li>
-                    <li><a href="#" class="hover:text-brand transition">Política de Envíos</a></li>
-                    <li><a href="#" class="hover:text-brand transition">Cambios y Devoluciones</a></li>
+                    <li><button onclick="openInfoModal('tracking')" class="hover:text-brand transition text-left">Rastrear Pedido</button></li>
+                    <li><button onclick="openInfoModal('shipping')" class="hover:text-brand transition text-left">Política de Envíos</button></li>
+                    <li><button onclick="openInfoModal('returns')" class="hover:text-brand transition text-left">Cambios y Devoluciones</button></li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-lg font-semibold mb-4">Contáctanos</h4>
-                <p class="text-gray-400 text-sm mb-2"><i class="fa-brands fa-whatsapp mr-2"></i> +57 322 694 2830</p>
-                <p class="text-gray-400 text-sm"><i class="fa-solid fa-envelope mr-2"></i> contacto@tinstore.online</p>
+                <a href="https://wa.me/573017638046" target="_blank" rel="noopener noreferrer" class="block text-gray-400 text-sm mb-2 hover:text-brand transition"><i class="fa-brands fa-whatsapp mr-2"></i> +57 301 763 8046</a>
+                <a href="mailto:somos.tinstore@gmail.com" class="block text-gray-400 text-sm mb-4 hover:text-brand transition"><i class="fa-solid fa-envelope mr-2"></i> somos.tinstore@gmail.com</a>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/tinstoreoficial/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-gray-400 hover:text-brand transition text-xl"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@user80426244797" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="text-gray-400 hover:text-brand transition text-xl"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
             </div>
         </div>
         <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-xs">
@@ -230,7 +248,7 @@
     </footer>
 
     <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/573226942830?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" 
+    <a href="https://wa.me/573017638046?text=Hola!%20Quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos" 
        target="_blank"
        rel="noopener noreferrer"
        class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition transform hover:scale-110 z-50 flex items-center justify-center">
@@ -274,23 +292,18 @@
         </div>
     </div>
 
-    <!-- Modal de Próxima Apertura (Aviso Amigable) -->
-    <div id="coming-soon-modal" class="fixed inset-0 bg-gray-50 z-[100] flex justify-center items-center p-4 transition-opacity duration-300">
-        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center relative transform scale-100 transition-transform duration-300">
-            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-light to-brand"></div>
-            <div class="mb-6 inline-block p-4 rounded-full bg-brand-light text-brand">
-                <i class="fa-solid fa-wand-magic-sparkles text-4xl"></i>
+    <!-- Modal de Información (Rastreo / Envíos / Cambios) -->
+    <div id="info-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden flex justify-center items-center p-4">
+        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="bg-brand p-4 flex justify-between items-center text-white">
+                <h3 id="info-modal-title" class="font-bold text-lg"></h3>
+                <button onclick="closeInfoModal()" class="hover:text-gray-200"><i class="fa-solid fa-xmark text-xl"></i></button>
             </div>
-            <h2 class="text-2xl font-bold text-gray-900 mb-3">¡Estamos Renovando! ✨</h2>
-            <p class="text-gray-600 mb-8 leading-relaxed">
-                Bienvenido a <b>TínStore</b>. En este momento estamos <b>actualizando nuestros precios y catálogo</b> para ofrecerte lo mejor.
-                <br><br>
-                La tienda estará disponible muy pronto. ¡Gracias por tu paciencia y preferencia!
-            </p>
+            <div id="info-modal-body" class="p-5 overflow-y-auto text-sm text-gray-600 leading-relaxed space-y-3"></div>
         </div>
     </div>
 
     <!-- Lógica Principal -->
-    <script src="script.js"></script>
+    <script src="script.js?v=1786946202422"></script>
 </body>
 </html>

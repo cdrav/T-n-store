@@ -1,0 +1,26 @@
+{
+  "name": "t-n-store",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./tailwind.css --minify && node scripts/bump-version.js",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./tailwind.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cdrav/T-n-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cdrav/T-n-store/issues"
+  },
+  "homepage": "https://github.com/cdrav/T-n-store#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}

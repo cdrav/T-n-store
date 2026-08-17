@@ -1,198 +1,148 @@
 // --- 1. Datos de Productos ---
 const CONFIG = {
-    phoneNumber: '573226942830', // Número único para todo el sitio (sin el + para la API)
+    phoneNumber: '573017638046', // Número único para todo el sitio (sin el + para la API)
     storeName: 'TínStore',
     currency: '$'
 };
 
 const products = [
-    // --- Pijamas ---
+    // --- Medias ---
     {
-        id: 'pijama-seda-soft',
-        name: 'Pijama Seda Soft',
-        category: 'pijamas',
-        price: 85000,
-        image: 'imagenes/descarga (2).jpg',
-        sizes: ['S', 'M', 'L', 'XL'],
-        desc: 'Tacto suave y fresco para noches de ensueño.',
-        badge: 'Nuevo'
+        id: 'medias-cereza',
+        name: 'Medias Cereza',
+        category: 'medias',
+        price: 8000,
+        image: 'imagenes/media-cereza.jpeg',
+        sizes: ['Única'],
+        desc: 'Tobilleras con bordado de cerezas. Diseños surtidos, no se repiten.',
+        stock: 3
     },
     {
-        id: 'pijama-verano-lino',
-        name: 'Pijama de Verano Lino',
-        category: 'pijamas',
-        price: 95000,
-        image: 'https://images.unsplash.com/photo-1585224252582-d55c3c783504?w=500&auto=format&fit=crop',
-        sizes: ['S', 'M', 'L'],
-        desc: 'Frescura y elegancia con nuestro lino premium.',
+        id: 'medias-stitch',
+        name: 'Medias Stitch',
+        category: 'medias',
+        price: 10000,
+        image: 'imagenes/media-stitch.jpeg',
+        sizes: ['Única'],
+        desc: 'Colección Stitch, 5 estampados diferentes. Diseño surtido al azar.',
+        badge: 'Popular',
+        stock: 5
     },
     {
-        id: 'pijama-algodon-estampado',
-        name: 'Pijama Algodón Estampado',
-        category: 'pijamas',
-        price: 78000,
-        image: 'https://images.unsplash.com/photo-1617364852202-162445d575c3?w=500&auto=format&fit=crop',
-        sizes: ['S', 'M', 'L', 'XL'],
-        desc: 'Comodidad y diversión con diseños únicos.',
+        id: 'medias-vaca',
+        name: 'Medias Vaca',
+        category: 'medias',
+        price: 6000,
+        image: 'imagenes/media-vaca-blanca.jpeg',
+        sizes: ['Única'],
+        desc: 'Estampado de vaquita, disponible en negra, rayas, blanca o "sweet milk". Diseño surtido al azar.',
+        stock: 5
     },
     {
-        id: 'pijama-polar-invierno',
-        name: 'Pijama Polar Invierno',
-        category: 'pijamas',
-        price: 120000,
-        image: 'https://images.unsplash.com/photo-1609603639342-52612f0d4f4b?w=500&auto=format&fit=crop',
-        sizes: ['M', 'L', 'XL'],
-        desc: 'Calidez garantizada para las noches más frías.',
-        badge: 'Más Vendido'
+        id: 'medias-huellas',
+        name: 'Medias Huellitas',
+        category: 'medias',
+        price: 8000,
+        image: 'imagenes/media-huellas.jpeg',
+        sizes: ['Única'],
+        desc: 'Bordado de huellitas en negro, blanco o gris. Diseño surtido al azar.',
+        stock: 6
     },
 
     // --- Termos ---
     {
-        id: 'termo-stitch-original',
-        name: 'Termo Stitch Original',
+        id: 'termo-stitch-azul',
+        name: 'Termo Stitch Azul',
         category: 'termos',
-        price: 45000,
-        image: 'imagenes/images.jpg',
+        price: 35000,
+        image: 'imagenes/termo-stitch-azul.jpeg',
         sizes: ['Única'],
-        desc: 'Edición especial para fans de Stitch.',
+        desc: 'Termo deportivo con correa, edición Stitch.',
+        badge: '¡Última unidad!',
+        stock: 1
     },
     {
-        id: 'termo-acero-pastel',
-        name: 'Termo Acero Pastel',
+        id: 'termo-stitch-rosado',
+        name: 'Termo Stitch Rosado',
         category: 'termos',
-        price: 55000,
-        image: 'https://images.unsplash.com/photo-1611213256292-399e74a43133?w=500&auto=format&fit=crop',
+        price: 35000,
+        image: 'imagenes/termo-stitch-rosado.jpeg',
         sizes: ['Única'],
-        desc: 'Mantiene tus bebidas frías o calientes con estilo.',
-    },
-    {
-        id: 'termo-motivacional-litro',
-        name: 'Termo Motivacional 1L',
-        category: 'termos',
-        price: 60000,
-        image: 'https://images.unsplash.com/photo-1570904404130-197a01dd3a6f?w=500&auto=format&fit=crop',
-        sizes: ['Única'],
-        desc: 'Mantente hidratado y motivado todo el día.',
-        badge: 'Popular'
+        desc: 'Termo deportivo con correa, edición Stitch.',
+        stock: 3
     },
 
-    // --- Medias ---
+    // --- Pantuflas ---
     {
-        id: 'medias-pattern-divertidas',
-        name: 'Medias Pattern Divertidas',
-        category: 'medias',
-        price: 15000,
-        image: 'imagenes/descarga (3).jpg',
+        id: 'pantuflas-gato-negro',
+        name: 'Pantuflas Gato Negro',
+        category: 'pantuflas',
+        price: 30000,
+        image: 'imagenes/pantuflas-gato-negro.jpeg',
         sizes: ['Única'],
-        desc: 'Dale un toque de color y alegría a tus pies.',
-    },
-    {
-        id: 'medias-aguacate-style',
-        name: 'Medias de Aguacate',
-        category: 'medias',
-        price: 18000,
-        image: 'https://images.unsplash.com/photo-1619561949789-36c9a7503f6f?w=500&auto=format&fit=crop',
-        sizes: ['Única'],
-        desc: 'El accesorio perfecto para los amantes del aguacate.',
-    },
-    {
-        id: 'medias-arte-famoso',
-        name: 'Medias Obras de Arte',
-        category: 'medias',
-        price: 22000,
-        image: 'https://images.unsplash.com/photo-1576481953331-b59a710b71b9?w=500&auto=format&fit=crop',
-        sizes: ['Única'],
-        desc: 'Lleva el arte contigo a donde vayas.',
-        badge: 'Exclusivo'
+        desc: 'Pantuflas afelpadas con bordado de gatito. Comodidad total para casa.',
+        badge: '¡Última unidad!',
+        stock: 1
     },
 
-    // --- Kits ---
+    // --- Relojes ---
     {
-        id: 'kit-regalo',
-        name: 'Kit Regalo Pareja',
-        category: 'pijamas termos medias',
-        price: 110000,
-        image: 'imagenes/descarga (1).jpg',
+        id: 'reloj-smart',
+        name: 'Reloj Inteligente Smart Watch',
+        category: 'relojes',
+        price: 75000,
+        image: 'imagenes/reloj-smart.jpeg',
         sizes: ['Única'],
-        desc: 'El regalo perfecto para compartir.',
-        badge: '-10%'
-    },
-    {
-        id: 'pijama-satin-azul',
-        name: 'Pijama Satín Azul',
-        category: 'pijamas',
-        price: 88000,
-        image: 'imagenes/descarga (2).jpg',
-        sizes: ['S', 'M', 'L'],
-        desc: 'Elegancia y frescura en color azul profundo.'
-    },
-    {
-        id: 'termo-inteligente',
-        name: 'Termo Digital LED',
-        category: 'termos',
-        price: 55000,
-        image: 'imagenes/images.jpg',
-        sizes: ['Única'],
-        desc: 'Muestra la temperatura de tu bebida al tacto.',
-        badge: 'Tecnología'
-    },
-    {
-        id: 'medias-invisibles',
-        name: 'Medias Tobilleras Pack x3',
-        category: 'medias',
-        price: 25000,
-        image: 'imagenes/descarga (3).jpg',
-        sizes: ['Única'],
-        desc: 'Comodidad invisible para tu calzado deportivo.'
-    },
-    {
-        id: 'kit-relax-total',
-        name: 'Kit Relax Total',
-        category: 'pijamas termos medias',
-        price: 135000,
-        image: 'imagenes/descarga (1).jpg',
-        sizes: ['Única'],
-        desc: 'Pijama + Antifaz + Termo. El descanso merecido.',
-        badge: 'Regalo Ideal'
-    },
-    {
-        id: 'pijama-satin-rosa',
-        name: 'Pijama Satín Rosa',
-        category: 'pijamas',
-        price: 88000,
-        image: 'imagenes/descarga (2).jpg',
-        sizes: ['S', 'M', 'L'],
-        desc: 'Suavidad y elegancia en color rosa pastel.'
-    },
-    {
-        id: 'termo-cafe-oficina',
-        name: 'Termo Café Oficina',
-        category: 'termos',
-        price: 48000,
-        image: 'imagenes/images.jpg',
-        sizes: ['Única'],
-        desc: 'Ideal para mantener tu café caliente en el trabajo.'
-    },
-    {
-        id: 'medias-gatitos',
-        name: 'Medias Gatitos',
-        category: 'medias',
-        price: 15000,
-        image: 'imagenes/descarga (3).jpg',
-        sizes: ['Única'],
-        desc: 'Diseño adorable para los amantes de los gatos.'
-    },
-    {
-        id: 'kit-pareja-premium',
-        name: 'Kit Pareja Premium',
-        category: 'pijamas termos medias',
-        price: 150000,
-        image: 'imagenes/descarga (1).jpg',
-        sizes: ['Única'],
-        desc: 'La experiencia completa para dos personas.',
-        badge: 'VIP'
+        desc: 'Smartwatch con notificaciones, llamadas y monitoreo de actividad.',
+        badge: 'Pocas unidades',
+        stock: 2,
+        refImage: true
     }
 ];
+
+// --- Información: Rastreo / Envíos / Cambios ---
+const INFO_CONTENT = {
+    tracking: {
+        title: 'Rastrear Pedido',
+        body: `
+            <p>Por ahora no tenemos rastreo automático en línea. Apenas confirmamos y despachamos tu pedido, te escribimos por WhatsApp con el estado del envío (y el número de guía de Interrapidísimo cuando aplique).</p>
+            <a href="https://wa.me/573017638046?text=Hola!%20Quiero%20conocer%20el%20estado%20de%20mi%20pedido" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-2 bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600 transition"><i class="fa-brands fa-whatsapp"></i> Consultar mi pedido</a>
+        `
+    },
+    shipping: {
+        title: 'Política de Envíos',
+        body: `
+            <p><i class="fa-solid fa-house text-brand mr-2"></i><b>Roldanillo, Valle del Cauca</b> (sede del emprendimiento): domicilio <b>gratis</b>, entrega el mismo día o al siguiente día hábil.</p>
+            <p><i class="fa-solid fa-truck text-brand mr-2"></i><b>Resto de Colombia:</b> envío nacional con Interrapidísimo. El costo depende de tu ciudad y te lo confirmamos por WhatsApp antes de despachar. Tiempo estimado: 2 a 5 días hábiles.</p>
+            <p class="text-xs text-gray-400">Los tiempos pueden variar según la zona y la operación de la transportadora.</p>
+            <a href="https://wa.me/573017638046?text=Hola!%20Quiero%20saber%20el%20costo%20de%20env%C3%ADo%20a%20mi%20ciudad" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-2 bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600 transition"><i class="fa-brands fa-whatsapp"></i> Consultar costo a mi ciudad</a>
+        `
+    },
+    returns: {
+        title: 'Cambios y Devoluciones',
+        body: `
+            <p>Tienes <b>5 días hábiles</b> desde que recibes tu pedido para solicitar un cambio.</p>
+            <ul class="list-disc list-inside space-y-1">
+                <li>El producto debe estar sin usar, con sus etiquetas y empaque original.</li>
+                <li>Si llegó dañado o fue un error nuestro en el pedido, nosotros cubrimos el envío del cambio.</li>
+                <li>Si el cambio es por talla o gusto, el costo de envío corre por cuenta del cliente.</li>
+            </ul>
+            <a href="https://wa.me/573017638046?text=Hola!%20Quiero%20solicitar%20un%20cambio%20o%20devoluci%C3%B3n" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-2 bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600 transition"><i class="fa-brands fa-whatsapp"></i> Solicitar un cambio</a>
+        `
+    }
+};
+
+function openInfoModal(type) {
+    const info = INFO_CONTENT[type];
+    if (!info) return;
+    document.getElementById('info-modal-title').innerText = info.title;
+    document.getElementById('info-modal-body').innerHTML = info.body;
+    document.getElementById('info-modal').classList.remove('hidden');
+}
+
+function closeInfoModal() {
+    document.getElementById('info-modal').classList.add('hidden');
+}
 
 // --- 2. Lógica del Carrito ---
 let cart = [];
@@ -203,7 +153,7 @@ try {
     localStorage.removeItem('tinStore_cart');
 }
 
-function addToCart(name, price, qtyId, sizeId, btnElement) {
+function addToCart(name, price, qtyId, sizeId, btnElement, stock) {
     const qtyInput = document.getElementById(qtyId);
     const sizeInput = document.getElementById(sizeId);
 
@@ -221,6 +171,13 @@ function addToCart(name, price, qtyId, sizeId, btnElement) {
     }
 
     const existingItem = cart.find(item => item.name === name && item.size === size);
+    const currentQtyInCart = existingItem ? existingItem.qty : 0;
+
+    if (stock && (currentQtyInCart + qty) > stock) {
+        alert(`Solo quedan ${stock} unidades disponibles de "${name}".`);
+        return;
+    }
+
     if (existingItem) {
         existingItem.qty += qty;
     } else {
@@ -335,6 +292,16 @@ function sendOrder() {
     message += `_Espero confirmación para realizar el pago. Gracias!_`;
 
     window.open(`https://wa.me/${CONFIG.phoneNumber}?text=${message}`, '_blank');
+
+    // Vaciar carrito y formulario tras enviar el pedido
+    cart = [];
+    localStorage.removeItem('tinStore_cart');
+    document.getElementById('customer-name').value = '';
+    document.getElementById('customer-address').value = '';
+    document.getElementById('customer-phone').value = '';
+    updateCartUI();
+    renderCartItems();
+    toggleCart();
 }
 
 // --- 4. Funciones de Renderizado y Filtros ---
@@ -352,12 +319,14 @@ function renderProducts() {
         const sizes = product.sizes || ['Única'];
         return `
         <div class="product-card ${product.category} bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
-            <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4">
-                <img src="${product.image}" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="${product.name}" onerror="handleImageError(this)">
-                ${product.badge ? `<span class="absolute top-2 left-2 bg-brand text-white text-xs font-bold px-2 py-1 rounded">${product.badge}</span>` : ''}
+            <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4 ring-1 ring-black/5">
+                <img src="${product.image}" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="${product.name}" loading="lazy" onerror="handleImageError(this)">
+                ${product.badge ? `<span class="absolute top-2 left-2 bg-rose-500 text-white text-xs font-bold px-2 py-1 rounded">${product.badge}</span>` : ''}
+                ${product.refImage ? `<span class="absolute bottom-2 right-2 bg-gray-900/80 text-white text-[10px] font-semibold px-2 py-1 rounded">Imagen de referencia</span>` : ''}
             </div>
             <h3 class="text-lg font-semibold text-gray-800">${product.name}</h3>
-            <p class="text-gray-500 text-sm mb-3">${product.desc || ''}</p>
+            <p class="text-gray-500 text-sm mb-1">${product.desc || ''}</p>
+            ${product.stock ? `<p class="text-xs text-gray-400 mb-2">${product.stock === 1 ? 'Queda 1 unidad' : 'Quedan ' + product.stock + ' unidades'}</p>` : ''}
             <div class="flex flex-col gap-2">
                 <span class="text-xl font-bold text-gray-900">$${product.price.toLocaleString()}</span>
                 <div class="flex justify-between items-center gap-2">
@@ -365,8 +334,8 @@ function renderProducts() {
                         ${sizes.map(s => `<option value="${s}">${s === 'Única' ? 'Única' : 'Talla ' + s}</option>`).join('')}
                     </select>
                     <div class="flex items-center gap-2">
-                        <input type="number" id="qty-${product.id}" min="1" value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
-                        <button onclick="addToCart('${product.name}', ${product.price}, 'qty-${product.id}', 'size-${product.id}', this)" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
+                        <input type="number" id="qty-${product.id}" min="1" ${product.stock ? `max="${product.stock}"` : ''} value="1" class="w-12 border border-gray-200 rounded-lg text-center py-1 text-sm focus:border-brand outline-none">
+                        <button onclick="addToCart('${product.name}', ${product.price}, 'qty-${product.id}', 'size-${product.id}', this, ${product.stock || 'null'})" class="bg-gray-900 text-white p-2 rounded-full hover:bg-brand transition shadow-md">
                             <i class="fa-solid fa-cart-plus"></i>
                         </button>
                     </div>
@@ -379,19 +348,10 @@ function renderProducts() {
 function selectCategory(category) {
     const section = document.getElementById('coleccion');
     if(section) section.scrollIntoView({ behavior: 'smooth' });
-
-    const buttons = document.querySelectorAll('.filter-btn');
-    let btnToActivate = null;
-    buttons.forEach(btn => {
-        if(btn.getAttribute('onclick').includes(`'${category}'`)) {
-            btnToActivate = btn;
-        }
-    });
-    
-    filterSelection(category, btnToActivate);
+    filterSelection(category);
 }
 
-function filterSelection(category, btn) {
+function filterSelection(category) {
     const cards = document.querySelectorAll('.product-card');
     cards.forEach(card => {
         if (category === 'all' || card.classList.contains(category)) {
@@ -400,16 +360,6 @@ function filterSelection(category, btn) {
             card.classList.add('hidden');
         }
     });
-
-    const buttons = document.querySelectorAll('.filter-btn');
-    buttons.forEach(b => {
-        b.classList.remove('bg-brand', 'text-white', 'border-brand');
-        b.classList.add('text-gray-600', 'border-gray-200', 'bg-white');
-    });
-    if(btn) {
-        btn.classList.remove('text-gray-600', 'border-gray-200', 'bg-white');
-        btn.classList.add('bg-brand', 'text-white', 'border-brand');
-    }
 }
 
 // --- 5. Inicialización ---
