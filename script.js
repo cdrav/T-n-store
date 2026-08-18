@@ -5,7 +5,7 @@ const CONFIG = {
     currency: '$',
     wompiPublicKey: 'pub_prod_AwwLlOJmf0WNyRZwSuBrGB17lneUNbRF',
     // URL del Cloudflare Worker que calcula la firma de integridad (ver wompi-signature-worker.js)
-    wompiSignatureEndpoint: '' // TODO: pegar aquí la URL del Worker, ej: 'https://tinstore-wompi-signature.usuario.workers.dev'
+    wompiSignatureEndpoint: 'https://tinstore-wompi-signature.cristian23wwe.workers.dev'
 };
 
 const products = [
