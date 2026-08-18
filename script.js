@@ -434,7 +434,16 @@ async function checkWompiReturn() {
     cart = [];
     updateCartUI();
 
-    window.open(`https://wa.me/${CONFIG.phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    // No usamos window.open() aquí: los navegadores bloquean ventanas emergentes
+    // que se abren solas al cargar la página (sin un clic directo del usuario en ese instante).
+    // Mostramos la confirmación en pantalla con un botón para que la persona lo abra ella misma.
+    const waUrl = `https://wa.me/${CONFIG.phoneNumber}?text=${encodeURIComponent(message)}`;
+    document.getElementById('info-modal-title').innerText = isConfirmed ? '¡Pago confirmado! 🎉' : 'Pago en verificación';
+    document.getElementById('info-modal-body').innerHTML = `
+        <p>${isConfirmed ? 'Tu pago fue aprobado por Wompi.' : 'Recibimos tu intento de pago, pero no pudimos confirmar el estado automáticamente.'} Para completar tu pedido, confírmalo con nosotros por WhatsApp:</p>
+        <a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-3 bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600 transition"><i class="fa-brands fa-whatsapp"></i> Confirmar pedido por WhatsApp</a>
+    `;
+    document.getElementById('info-modal').classList.remove('hidden');
 }
 
 // --- 4. Funciones de Renderizado y Filtros ---
