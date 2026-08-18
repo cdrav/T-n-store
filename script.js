@@ -294,25 +294,17 @@ async function payWithWompi() {
     const amountInCents = String(Math.round(total * 100));
     const currency = 'COP';
 
-    // Enviamos el detalle del pedido por WhatsApp de inmediato, en el mismo clic del usuario
-    // (así el navegador no bloquea la ventana). Esto NO confirma el pago -- eso llega por
-    // correo de Wompi -- solo garantiza que el pedido (qué y a dónde enviarlo) no se pierda
-    // si el cliente no vuelve a la tienda después de pagar.
-    let orderMessage = `*PEDIDO EN PROCESO DE PAGO* 🛍️⏳\n`;
-    orderMessage += `🔖 Referencia: ${reference}\n\n`;
-    orderMessage += `*DETALLE DEL PEDIDO:*\n---------------------------\n`;
-    cart.forEach(item => {
-        const itemTotal = item.price * item.qty;
-        orderMessage += `✅ *${item.name}*\n   └ Talla: ${item.size} | Cant: ${item.qty} | $${itemTotal.toLocaleString()}\n`;
-    });
-    orderMessage += `---------------------------\n💰 *TOTAL: $${total.toLocaleString()}*\n\n`;
-    orderMessage += `📍 *DATOS DE ENVÍO:*\n`;
-    orderMessage += `👤 Cliente: ${name}\n`;
-    orderMessage += `🏠 Dirección: ${address}\n`;
-    orderMessage += `📱 Contacto: ${phone}\n\n`;
-    orderMessage += `_El cliente fue redirigido a Wompi para pagar. Verifica el correo de Wompi con esta referencia antes de despachar._`;
-
-    window.open(`https://wa.me/${CONFIG.phoneNumber}?text=${encodeURIComponent(orderMessage)}`, '_blank');
+    // Avisamos el pedido por correo en segundo plano (no depende de abrir nada en el
+    // celular del cliente, así que no falla en navegadores in-app ni bloqueadores de
+    // ventanas emergentes). Esto NO confirma el pago -- eso llega por correo de Wompi --
+    // solo garantiza que el pedido (qué y a dónde enviarlo) nunca se pierda.
+    if (CONFIG.wompiSignatureEndpoint) {
+        fetch(`${CONFIG.wompiSignatureEndpoint}/notify`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ cart, name, address, phone, reference, total })
+        }).catch(e => console.error('No se pudo enviar el aviso de pedido por correo:', e));
+    }
 
     let signature;
     try {
