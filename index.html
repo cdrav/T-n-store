@@ -39,7 +39,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- CSS de Tailwind compilado y purgado (ver README/package.json: npm run build:css) -->
-    <link rel="stylesheet" href="tailwind.css?v=1787022083771">
+    <link rel="stylesheet" href="tailwind.css?v=1787022425013">
     <!-- Iconos (solo subconjuntos solid + brands, usados en el sitio) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
@@ -284,14 +284,13 @@
                     <input type="tel" id="customer-phone" placeholder="Teléfono / WhatsApp" class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-brand focus:ring-1 focus:ring-brand outline-none text-sm">
                 </div>
 
-                <button onclick="payWithWompi()" class="w-full bg-[#5B21B6] text-white font-bold py-3 rounded-xl hover:bg-[#4C1D95] transition flex justify-center items-center gap-2 shadow-lg transform active:scale-95 mb-3">
+                <button onclick="payWithWompi()" class="w-full bg-[#5B21B6] text-white font-bold py-3 rounded-xl hover:bg-[#4C1D95] transition flex justify-center items-center gap-2 shadow-lg transform active:scale-95">
                     <span>Pagar con Wompi</span>
                     <i class="fa-solid fa-lock text-lg"></i>
                 </button>
-                <button onclick="sendOrder()" class="w-full bg-green-500 text-white font-bold py-3 rounded-xl hover:bg-green-600 transition flex justify-center items-center gap-2 shadow-lg transform active:scale-95">
-                    <span>Coordinar por WhatsApp</span>
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                </button>
+                <a href="https://wa.me/573017638046?text=Hola!%20Ya%20realic%C3%A9%20mi%20pago%2C%20aqu%C3%AD%20est%C3%A1%20mi%20comprobante" target="_blank" rel="noopener noreferrer" class="block text-xs text-gray-400 text-center mt-3 hover:text-brand transition">
+                    Después de pagar, comparte tu comprobante por WhatsApp para agilizar tu envío
+                </a>
             </div>
         </div>
     </div>
@@ -308,6 +307,6 @@
     </div>
 
     <!-- Lógica Principal -->
-    <script src="script.js?v=1787022083771"></script>
+    <script src="script.js?v=1787022425013"></script>
 </body>
 </html>

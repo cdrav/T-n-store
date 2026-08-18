@@ -271,55 +271,6 @@ function removeFromCart(index) {
     updateCartUI();
 }
 
-function sendOrder() {
-    const name = document.getElementById('customer-name').value;
-    const address = document.getElementById('customer-address').value;
-    const phone = document.getElementById('customer-phone').value;
-
-    if (cart.length === 0) {
-        alert('Agrega productos al carrito primero.');
-        return;
-    }
-    if (!name || !address || !phone) {
-        alert('Por favor completa tus datos de envío.');
-        return;
-    }
-
-    // Generar número de orden aleatorio para referencia
-    const orderId = Math.floor(Math.random() * 10000) + 1;
-    const date = new Date().toLocaleDateString();
-
-    let message = `*NUEVO PEDIDO WEB #ORD-${orderId}* 🛍️\n`;
-    message += `📅 Fecha: ${date}\n\n`;
-    message += `*DETALLE DEL PEDIDO:*\n---------------------------\n`;
-
-    let total = 0;
-    cart.forEach(item => {
-        const itemTotal = item.price * item.qty;
-        message += `✅ *${item.name}*\n   └ Talla: ${item.size} | Cant: ${item.qty} | $${itemTotal.toLocaleString()}\n`;
-        total += itemTotal;
-    });
-
-    message += `---------------------------\n💰 *TOTAL A PAGAR: $${total.toLocaleString()}*\n\n`;
-    message += `📍 *DATOS DE ENVÍO:*\n`;
-    message += `👤 Cliente: ${name}\n`;
-    message += `🏠 Dirección: ${address}\n`;
-    message += `📱 Contacto: ${phone}\n\n`;
-    message += `_Espero confirmación para realizar el pago. Gracias!_`;
-
-    window.open(`https://wa.me/${CONFIG.phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
-
-    // Vaciar carrito y formulario tras enviar el pedido
-    cart = [];
-    localStorage.removeItem('tinStore_cart');
-    document.getElementById('customer-name').value = '';
-    document.getElementById('customer-address').value = '';
-    document.getElementById('customer-phone').value = '';
-    updateCartUI();
-    renderCartItems();
-    toggleCart();
-}
-
 async function payWithWompi() {
     const name = document.getElementById('customer-name').value;
     const address = document.getElementById('customer-address').value;
