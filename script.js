@@ -416,10 +416,10 @@ function renderProducts() {
                 ${product.badge ? `<span class="absolute top-2 left-2 bg-rose-500 text-white text-xs font-bold px-2 py-1 rounded">${product.badge}</span>` : ''}
                 ${product.refImage ? `<span class="absolute bottom-2 right-2 bg-gray-900/80 text-white text-[10px] font-semibold px-2 py-1 rounded">Imagen de referencia</span>` : ''}
             </div>
-            <h3 class="text-lg font-semibold text-gray-800">${product.name}</h3>
-            <p class="text-gray-500 text-sm mb-1">${product.desc || ''}</p>
-            ${product.stock ? `<p class="text-xs text-gray-400 mb-2">${product.stock === 1 ? 'Queda 1 unidad' : 'Quedan ' + product.stock + ' unidades'}</p>` : ''}
-            <div class="flex flex-col gap-2">
+            <h3 class="text-lg font-semibold text-gray-800 text-center">${product.name}</h3>
+            <p class="text-gray-500 text-sm mb-1 text-center">${product.desc || ''}</p>
+            ${product.stock ? `<p class="text-xs text-gray-400 mb-2 text-center">${product.stock === 1 ? 'Queda 1 unidad' : 'Quedan ' + product.stock + ' unidades'}</p>` : ''}
+            <div class="flex flex-col gap-2 text-center">
                 <span class="text-xl font-bold text-gray-900">$${product.price.toLocaleString()}</span>
                 <div class="flex justify-between items-center gap-2">
                     <select id="size-${product.id}" class="border border-gray-200 rounded-lg text-sm py-1 px-2 focus:border-brand outline-none bg-white w-24">
