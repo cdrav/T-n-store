@@ -103,19 +103,6 @@ const products = [
     }
 ];
 
-// Producto de prueba para verificar el pago con Wompi (no forma parte del catálogo real).
-// Solo se muestra visitando la página con ?test=1 en la URL.
-const TEST_PRODUCT = {
-    id: 'producto-prueba-wompi',
-    name: 'Producto de Prueba (Wompi)',
-    category: 'test',
-    price: 2000,
-    image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3QgZmlsbD0iIzViMjFiNiIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiLz48dGV4dCBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjUwJSIgeT0iNDUlIj5QUlVFQkE8L3RleHQ+PHRleHQgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjUwJSIgeT0iNjAlIj5ObyBlcyB1biBwcm9kdWN0byByZWFsPC90ZXh0Pjwvc3ZnPg==',
-    sizes: ['Única'],
-    desc: 'Producto oculto solo para probar el checkout de Wompi con un monto real pequeño.',
-    badge: 'SOLO PRUEBA'
-};
-
 // --- Información: Rastreo / Envíos / Cambios ---
 const INFO_CONTENT = {
     tracking: {
@@ -420,10 +407,7 @@ function renderProducts() {
     const container = document.getElementById('products-container');
     if (!container) return;
 
-    const isTestMode = new URLSearchParams(window.location.search).has('test');
-    const list = isTestMode ? [TEST_PRODUCT, ...products] : products;
-
-    container.innerHTML = list.map(product => {
+    container.innerHTML = products.map(product => {
         const sizes = product.sizes || ['Única'];
         return `
         <div class="product-card ${product.category} bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
