@@ -8,7 +8,7 @@
     <meta name="description" content="Descubre medias temáticas, termos Stitch, pantuflas y más en TínStore. Comodidad y estilo para tu día a día.">
     <meta name="keywords" content="medias, termos, pantuflas, relojes inteligentes, regalos, tienda online, colombia, estilo, confort">
     <link rel="canonical" href="https://tinstore.com.co/" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%236366f1'/%3E%3Cpath fill='%23fff' d='M8 8V6a4 4 0 1 1 8 0v2h2a1 1 0 0 1 1 1l-1 9a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1l-1-9a1 1 0 0 1 1-1h2Zm2 0h4V6a2 2 0 1 0-4 0v2Z'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/jpeg" href="imagenes/logo/logo-tin-store.jpeg">
     <!-- Open Graph / redes sociales (WhatsApp, Facebook) -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="TínStore">
@@ -39,7 +39,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- CSS de Tailwind compilado y purgado (ver README/package.json: npm run build:css) -->
-    <link rel="stylesheet" href="tailwind.css?v=1787117378883">
+    <link rel="stylesheet" href="tailwind.css?v=1787119099944">
     <!-- Iconos (solo subconjuntos solid + brands, usados en el sitio) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
@@ -60,14 +60,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center cursor-pointer group">
-                    <!-- Icono en caja moderna -->
-                    <div class="bg-brand text-white w-10 h-10 flex items-center justify-center rounded-xl shadow-md transform group-hover:rotate-12 transition duration-300 mr-2">
-                        <i class="fa-solid fa-bag-shopping text-lg"></i>
-                    </div>
+                <a href="#inicio" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <img src="imagenes/logo/logo-tin-store.jpeg" alt="TínStore" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full shadow-lg ring-2 ring-white transform group-hover:scale-105 transition duration-300 mr-2">
                     <!-- Tipografía Elegante: Bold + Light -->
                     <span class="text-2xl font-bold text-gray-900 tracking-tight">Tín<span class="text-brand font-light">Store</span></span>
-                </div>
+                </a>
                 
                 <!-- Menú Desktop -->
                 <div class="hidden md:flex space-x-8">
@@ -147,6 +144,8 @@
                         <!-- Overlay para unificar el tono entre fotos de distinto origen -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none"></div>
                     </div>
+                    <!-- Sello del logo, grande y llamativo -->
+                    <img src="imagenes/logo/logo-tin-store.jpeg" alt="TínStore" class="absolute -bottom-8 -left-8 w-32 h-32 sm:w-40 sm:h-40 rounded-full shadow-2xl ring-4 ring-white transform -rotate-6 hover:rotate-0 transition duration-500 z-10">
                 </div>
             </div>
         </div>
@@ -373,6 +372,6 @@
     </div>
 
     <!-- Lógica Principal -->
-    <script src="script.js?v=1787117378883"></script>
+    <script src="script.js?v=1787119099944"></script>
 </body>
 </html>
