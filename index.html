@@ -39,7 +39,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- CSS de Tailwind compilado y purgado (ver README/package.json: npm run build:css) -->
-    <link rel="stylesheet" href="tailwind.css?v=1787109242370">
+    <link rel="stylesheet" href="tailwind.css?v=1787117378883">
     <!-- Iconos (solo subconjuntos solid + brands, usados en el sitio) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
@@ -73,6 +73,7 @@
                 <div class="hidden md:flex space-x-8">
                     <a href="#inicio" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-brand font-medium transition duration-300">Inicio</a>
                     <a href="#coleccion" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-brand font-medium transition duration-300">Colección</a>
+                    <a href="#como-comprar" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-brand font-medium transition duration-300">Cómo Comprar</a>
                     <a href="nosotros.html" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-brand font-medium transition duration-300">Nosotros</a>
                     <button onclick="window.print()" class="px-4 py-2 rounded-full border border-brand text-brand hover:bg-brand hover:text-white font-medium transition duration-300"><i class="fa-solid fa-file-pdf mr-2"></i>Catálogo</button>
                 </div>
@@ -97,6 +98,7 @@
             <div class="px-4 pt-2 pb-4 space-y-1">
                 <a href="#inicio" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50 border-b border-gray-50">Inicio</a>
                 <a href="#coleccion" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50 border-b border-gray-50">Colección</a>
+                <a href="#como-comprar" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50 border-b border-gray-50">Cómo Comprar</a>
                 <a href="nosotros.html" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-brand hover:bg-gray-50">Nosotros</a>
                 <button onclick="window.print()" class="w-full text-left px-3 py-3 rounded-md text-base font-medium text-brand hover:bg-gray-50"><i class="fa-solid fa-file-pdf mr-2"></i>Descargar Catálogo</button>
             </div>
@@ -198,6 +200,70 @@
 
             <!-- Contenedor donde JS inyectará los productos -->
             <div id="products-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Cómo Comprar -->
+    <section id="como-comprar" class="py-16 bg-gray-50 scroll-mt-32 relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-72 h-72 bg-brand-light rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-14">
+                <span class="text-brand font-semibold tracking-wider uppercase text-sm">Fácil y rápido</span>
+                <h2 class="mt-2 text-3xl font-bold text-gray-900">¿Cómo comprar?</h2>
+                <p class="text-gray-500 mt-2">En 4 simples pasos tu pedido está en camino</p>
+            </div>
+
+            <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6">
+                <!-- Línea conectora (solo desktop) -->
+                <div class="hidden lg:block absolute top-9 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-brand-light via-brand to-brand-light"></div>
+
+                <!-- Paso 1 -->
+                <div class="relative flex flex-col items-center text-center group">
+                    <div class="relative z-10 w-[72px] h-[72px] rounded-2xl bg-white shadow-lg ring-1 ring-black/5 flex items-center justify-center mb-5 transform transition duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+                        <span class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-brand text-white text-xs font-bold flex items-center justify-center shadow-md">1</span>
+                        <i class="fa-solid fa-magnifying-glass text-2xl text-brand"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-1">Explora y elige</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Navega la colección y encuentra el diseño que más te enamore.</p>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="relative flex flex-col items-center text-center group">
+                    <div class="relative z-10 w-[72px] h-[72px] rounded-2xl bg-white shadow-lg ring-1 ring-black/5 flex items-center justify-center mb-5 transform transition duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+                        <span class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-brand text-white text-xs font-bold flex items-center justify-center shadow-md">2</span>
+                        <i class="fa-solid fa-cart-plus text-2xl text-brand"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-1">Agrega al carrito</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Suma tus favoritos con un clic en "Agregar al carrito".</p>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="relative flex flex-col items-center text-center group">
+                    <div class="relative z-10 w-[72px] h-[72px] rounded-2xl bg-white shadow-lg ring-1 ring-black/5 flex items-center justify-center mb-5 transform transition duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+                        <span class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-brand text-white text-xs font-bold flex items-center justify-center shadow-md">3</span>
+                        <i class="fa-solid fa-truck-fast text-2xl text-brand"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-1">Datos de envío</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Ingresa nombre, dirección y teléfono para tu entrega.</p>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="relative flex flex-col items-center text-center group">
+                    <div class="relative z-10 w-[72px] h-[72px] rounded-2xl bg-white shadow-lg ring-1 ring-black/5 flex items-center justify-center mb-5 transform transition duration-300 group-hover:-translate-y-2 group-hover:shadow-xl">
+                        <span class="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-brand text-white text-xs font-bold flex items-center justify-center shadow-md">4</span>
+                        <i class="fa-solid fa-lock text-2xl text-brand"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-1">Paga seguro</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Confirma con Wompi: PSE, Nequi o tarjeta. ¡Y listo!</p>
+                </div>
+            </div>
+
+            <div class="mt-14 text-center">
+                <a href="#coleccion" class="inline-flex items-center gap-2 px-8 py-3 bg-brand text-white font-semibold rounded-full shadow-lg hover:bg-brand-dark transition transform hover:-translate-y-1">
+                    Empezar a comprar
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -307,6 +373,6 @@
     </div>
 
     <!-- Lógica Principal -->
-    <script src="script.js?v=1787109242370"></script>
+    <script src="script.js?v=1787117378883"></script>
 </body>
 </html>
