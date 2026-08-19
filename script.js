@@ -410,7 +410,7 @@ function renderProducts() {
     container.innerHTML = products.map(product => {
         const sizes = product.sizes || ['Única'];
         return `
-        <div class="product-card ${product.category} bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
+        <div class="product-card ${product.category} w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
             <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4 ring-1 ring-black/5">
                 <img src="${product.image}" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="${product.name}" loading="lazy" onerror="handleImageError(this)">
                 ${product.badge ? `<span class="absolute top-2 left-2 bg-rose-500 text-white text-xs font-bold px-2 py-1 rounded">${product.badge}</span>` : ''}
