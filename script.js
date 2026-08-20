@@ -98,6 +98,40 @@ const products = [
         stock: 1
     },
 
+    // --- Gafas ---
+    {
+        id: 'gafas-blanco',
+        name: 'Gafas Octagonales Blanco',
+        category: 'gafas',
+        price: 35000,
+        image: 'imagenes/gafas-blanco.jpeg',
+        sizes: ['Única'],
+        desc: 'Gafas de sol octagonales con marco dorado, ideales para cualquier look.',
+        stock: 2
+    },
+    {
+        id: 'gafas-beige',
+        name: 'Gafas Octagonales Beige',
+        category: 'gafas',
+        price: 35000,
+        image: 'imagenes/gafas-beige.jpeg',
+        sizes: ['Única'],
+        desc: 'Gafas de sol octagonales con marco dorado, ideales para cualquier look.',
+        badge: '¡Última unidad!',
+        stock: 1
+    },
+    {
+        id: 'gafas-negro',
+        name: 'Gafas Octagonales Negro',
+        category: 'gafas',
+        price: 35000,
+        image: 'imagenes/gafas-negro.jpeg',
+        sizes: ['Única'],
+        desc: 'Gafas de sol octagonales con marco dorado, ideales para cualquier look.',
+        badge: '¡Última unidad!',
+        stock: 1
+    },
+
     // --- Ropa ---
     {
         id: 'salida-bano-crochet',
