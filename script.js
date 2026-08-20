@@ -74,6 +74,28 @@ const products = [
         desc: 'Termo deportivo con correa, edición Stitch.',
         stock: 3
     },
+    {
+        id: 'termo-stitch-lila',
+        name: 'Termo Stitch Lila',
+        category: 'termos',
+        price: 37000,
+        image: 'imagenes/termo-stitch-lila.jpeg',
+        sizes: ['Única'],
+        desc: 'Termo deportivo con correa, edición Stitch & Angel.',
+        badge: '¡Última unidad!',
+        stock: 1
+    },
+    {
+        id: 'termo-stitch-verde',
+        name: 'Termo Stitch Verde',
+        category: 'termos',
+        price: 37000,
+        image: 'imagenes/termo-stitch-verde.jpeg',
+        sizes: ['Única'],
+        desc: 'Termo deportivo con correa, edición Stitch & Angel.',
+        badge: '¡Última unidad!',
+        stock: 1
+    },
 
     // --- Pantuflas ---
     {
