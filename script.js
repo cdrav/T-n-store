@@ -102,7 +102,7 @@ const products = [
     {
         id: 'salida-bano-crochet',
         name: 'Salida de Baño Crochet',
-        category: 'ropa',
+        category: 'salidas-de-bano',
         price: 51000,
         image: 'imagenes/salida-bano-crochet.jpeg',
         sizes: ['Única'],
