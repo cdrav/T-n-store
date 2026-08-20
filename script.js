@@ -29,7 +29,7 @@ const products = [
         sizes: ['Única'],
         desc: 'Colección Stitch, 5 estampados diferentes. Diseño surtido al azar.',
         badge: 'Popular',
-        stock: 5
+        stock: 3
     },
     {
         id: 'medias-vaca',
@@ -39,7 +39,7 @@ const products = [
         image: 'imagenes/media-vaca-blanca.jpeg',
         sizes: ['Única'],
         desc: 'Estampado de vaquita, disponible en negra, rayas, blanca o "sweet milk". Diseño surtido al azar.',
-        stock: 5
+        stock: 2
     },
     {
         id: 'medias-huellas',
@@ -97,8 +97,8 @@ const products = [
         image: 'imagenes/reloj-smart.jpeg',
         sizes: ['Única'],
         desc: 'Smartwatch con notificaciones, llamadas y monitoreo de actividad.',
-        badge: 'Pocas unidades',
-        stock: 2,
+        badge: '¡Última unidad!',
+        stock: 1,
         refImage: true
     }
 ];
