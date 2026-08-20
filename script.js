@@ -98,6 +98,19 @@ const products = [
         stock: 1
     },
 
+    // --- Ropa ---
+    {
+        id: 'salida-bano-crochet',
+        name: 'Salida de Baño Crochet',
+        category: 'ropa',
+        price: 51000,
+        image: 'imagenes/salida-bano-crochet.jpeg',
+        sizes: ['Única'],
+        desc: 'Diseño crochet con detalles únicos, ideal para tus días de verano.',
+        badge: 'Nuevo',
+        stock: 2
+    },
+
     // --- Pantuflas ---
     {
         id: 'pantuflas-gato-negro',
