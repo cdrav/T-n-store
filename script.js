@@ -130,7 +130,7 @@ const products = [
         price: 59000,
         image: 'imagenes/vestido-bano-crudo.jpeg',
         sizes: ['Única'],
-        desc: 'Diseño tejido con detalles en cuero, ideal para tus días de playa o piscina.',
+        desc: 'Diseño tejido con detalles, ideal para tus días de playa o piscina.',
         badge: '¡Última unidad!',
         stock: 1
     },
