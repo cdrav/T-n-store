@@ -125,10 +125,10 @@ const products = [
     },
     {
         id: 'vestido-bano-crudo',
-        name: 'Vestido de Baño Crudo',
+        name: 'Vestido de Baño',
         category: 'vestidos-de-bano',
         price: 59000,
-        image: 'imagenes/vestido-bano-crudo.jpeg',
+        images: ['imagenes/vestido-bano-crudo.jpeg', 'imagenes/vestido-bano-crudo-2.jpeg'],
         sizes: ['Única'],
         desc: 'Diseño tejido con detalles, ideal para tus días de playa o piscina.',
         badge: '¡Última unidad!',
@@ -463,16 +463,49 @@ function handleImageError(img) {
     img.src = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgMzAwIDMwMCI+PHJlY3QgZmlsbD0iI2VlZSIgd2lkdGg9IjMwMCIgaGVpZ2h0PSIzMDAiLz48dGV4dCBmaWxsPSIjNTU1IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCIgZHk9IjEwLjUiIGZvbnQtd2VpZ2h0PSJib2xkIiB4PSI1MCUiIHk9IjUwJSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+U2luIEltYWdlbjwvdGV4dD48L3N2Zz4=';
 }
 
+function cycleProductImage(productId, direction) {
+    const wrap = document.getElementById(`imgwrap-${productId}`);
+    if (!wrap) return;
+    const slides = wrap.querySelectorAll('img');
+    const dots = wrap.querySelectorAll('.carousel-dot');
+    if (slides.length < 2) return;
+
+    let current = 0;
+    slides.forEach((slide, i) => { if (slide.classList.contains('opacity-100')) current = i; });
+
+    const next = (current + direction + slides.length) % slides.length;
+
+    slides[current].classList.remove('opacity-100');
+    slides[current].classList.add('opacity-0');
+    slides[next].classList.remove('opacity-0');
+    slides[next].classList.add('opacity-100');
+
+    if (dots[current]) { dots[current].classList.remove('bg-white'); dots[current].classList.add('bg-white/50'); }
+    if (dots[next]) { dots[next].classList.remove('bg-white/50'); dots[next].classList.add('bg-white'); }
+}
+
 function renderProducts() {
     const container = document.getElementById('products-container');
     if (!container) return;
 
     container.innerHTML = products.map(product => {
         const sizes = product.sizes || ['Única'];
+        const images = product.images || [product.image];
+        const isCarousel = images.length > 1;
+        const imageClass = 'relative object-contain w-full h-full transform group-hover:scale-[2] group-hover:drop-shadow-2xl transition duration-300 cursor-zoom-in';
+        const slidesHtml = images.map((src, i) => `
+                <img src="${src}" class="${imageClass} ${isCarousel ? `absolute inset-0 transition-opacity duration-300 ${i === 0 ? 'opacity-100' : 'opacity-0'}` : ''}" alt="${product.name}" loading="lazy" onerror="handleImageError(this)">`).join('');
+        const carouselControlsHtml = isCarousel ? `
+                <button onclick="event.stopPropagation(); cycleProductImage('${product.id}', -1)" class="absolute left-1 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-7 h-7 rounded-full flex items-center justify-center shadow z-10"><i class="fa-solid fa-chevron-left text-xs"></i></button>
+                <button onclick="event.stopPropagation(); cycleProductImage('${product.id}', 1)" class="absolute right-1 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-7 h-7 rounded-full flex items-center justify-center shadow z-10"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+                <div class="absolute bottom-1 inset-x-0 flex justify-center gap-1 z-10">
+                    ${images.map((_, i) => `<span class="carousel-dot w-1.5 h-1.5 rounded-full ${i === 0 ? 'bg-white' : 'bg-white/50'}"></span>`).join('')}
+                </div>` : '';
         return `
         <div class="product-card ${product.category} w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
-            <div class="relative bg-gray-100 rounded-lg overflow-hidden hover:overflow-visible hover:z-20 h-64 mb-4 ring-1 ring-black/5">
-                <img src="${product.image}" class="relative object-contain w-full h-full transform group-hover:scale-[2] group-hover:drop-shadow-2xl transition duration-300 cursor-zoom-in" alt="${product.name}" loading="lazy" onerror="handleImageError(this)">
+            <div id="imgwrap-${product.id}" class="relative bg-gray-100 rounded-lg overflow-hidden hover:overflow-visible hover:z-20 h-64 mb-4 ring-1 ring-black/5">
+                ${slidesHtml}
+                ${carouselControlsHtml}
                 ${product.badge ? `<span class="absolute top-2 left-2 bg-rose-500 text-white text-xs font-bold px-2 py-1 rounded">${product.badge}</span>` : ''}
                 ${product.refImage ? `<span class="absolute bottom-2 right-2 bg-gray-900/80 text-white text-[10px] font-semibold px-2 py-1 rounded">Imagen de referencia</span>` : ''}
             </div>
