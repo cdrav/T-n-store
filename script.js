@@ -118,7 +118,7 @@ const products = [
         category: 'vestidos-de-bano',
         price: 59000,
         image: 'imagenes/vestido-bano-negro.jpeg',
-        sizes: ['Única'],
+        sizes: ['M'],
         desc: 'Bikini triángulo, ideal para tus días de playa o piscina.',
         badge: '¡Última unidad!',
         stock: 1
@@ -129,7 +129,7 @@ const products = [
         category: 'vestidos-de-bano',
         price: 59000,
         images: ['imagenes/vestido-bano-crudo.jpeg', 'imagenes/vestido-bano-crudo-2.jpeg'],
-        sizes: ['Única'],
+        sizes: ['M'],
         desc: 'Diseño tejido con detalles, ideal para tus días de playa o piscina.',
         badge: '¡Última unidad!',
         stock: 1
@@ -492,9 +492,9 @@ function renderProducts() {
         const sizes = product.sizes || ['Única'];
         const images = product.images || [product.image];
         const isCarousel = images.length > 1;
-        const imageClass = 'relative object-contain w-full h-full transform group-hover:scale-[2] group-hover:drop-shadow-2xl transition duration-300 cursor-zoom-in';
+        const imageClass = 'object-contain w-full h-full transform group-hover:scale-[2] group-hover:drop-shadow-2xl transition duration-300 cursor-zoom-in';
         const slidesHtml = images.map((src, i) => `
-                <img src="${src}" class="${imageClass} ${isCarousel ? `absolute inset-0 transition-opacity duration-300 ${i === 0 ? 'opacity-100' : 'opacity-0'}` : ''}" alt="${product.name}" loading="lazy" onerror="handleImageError(this)">`).join('');
+                <img src="${src}" class="${imageClass} ${isCarousel ? `absolute inset-0 transition-opacity duration-300 ${i === 0 ? 'opacity-100' : 'opacity-0'}` : 'relative'}" alt="${product.name}" loading="lazy" onerror="handleImageError(this)">`).join('');
         const carouselControlsHtml = isCarousel ? `
                 <button onclick="event.stopPropagation(); cycleProductImage('${product.id}', -1)" class="absolute left-1 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-7 h-7 rounded-full flex items-center justify-center shadow z-10"><i class="fa-solid fa-chevron-left text-xs"></i></button>
                 <button onclick="event.stopPropagation(); cycleProductImage('${product.id}', 1)" class="absolute right-1 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 w-7 h-7 rounded-full flex items-center justify-center shadow z-10"><i class="fa-solid fa-chevron-right text-xs"></i></button>
