@@ -111,6 +111,30 @@ const products = [
         stock: 2
     },
 
+    // --- Vestidos de Baño ---
+    {
+        id: 'vestido-bano-negro',
+        name: 'Vestido de Baño Negro',
+        category: 'vestidos-de-bano',
+        price: 59000,
+        image: 'imagenes/vestido-bano-negro.jpeg',
+        sizes: ['Única'],
+        desc: 'Bikini triángulo, ideal para tus días de playa o piscina.',
+        badge: '¡Última unidad!',
+        stock: 1
+    },
+    {
+        id: 'vestido-bano-crudo',
+        name: 'Vestido de Baño Crudo',
+        category: 'vestidos-de-bano',
+        price: 59000,
+        image: 'imagenes/vestido-bano-crudo.jpeg',
+        sizes: ['Única'],
+        desc: 'Diseño tejido con detalles en cuero, ideal para tus días de playa o piscina.',
+        badge: '¡Última unidad!',
+        stock: 1
+    },
+
     // --- Pantuflas ---
     {
         id: 'pantuflas-gato-negro',
