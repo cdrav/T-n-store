@@ -447,8 +447,8 @@ function renderProducts() {
         const sizes = product.sizes || ['Única'];
         return `
         <div class="product-card ${product.category} w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] bg-white rounded-xl shadow-sm hover:shadow-xl transition duration-300 p-4 group">
-            <div class="relative bg-gray-100 rounded-lg overflow-hidden h-64 mb-4 ring-1 ring-black/5">
-                <img src="${product.image}" class="object-contain w-full h-full transform group-hover:scale-105 transition duration-500" alt="${product.name}" loading="lazy" onerror="handleImageError(this)">
+            <div class="relative bg-gray-100 rounded-lg overflow-hidden hover:overflow-visible hover:z-20 h-64 mb-4 ring-1 ring-black/5">
+                <img src="${product.image}" class="relative object-contain w-full h-full transform group-hover:scale-[2] group-hover:drop-shadow-2xl transition duration-300 cursor-zoom-in" alt="${product.name}" loading="lazy" onerror="handleImageError(this)">
                 ${product.badge ? `<span class="absolute top-2 left-2 bg-rose-500 text-white text-xs font-bold px-2 py-1 rounded">${product.badge}</span>` : ''}
                 ${product.refImage ? `<span class="absolute bottom-2 right-2 bg-gray-900/80 text-white text-[10px] font-semibold px-2 py-1 rounded">Imagen de referencia</span>` : ''}
             </div>
