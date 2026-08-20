@@ -72,7 +72,8 @@ const products = [
         image: 'imagenes/termo-stitch-rosado.jpeg',
         sizes: ['Única'],
         desc: 'Termo deportivo con correa, edición Stitch.',
-        stock: 3
+        badge: '¡Última unidad!',
+        stock: 1
     },
     {
         id: 'termo-stitch-lila',
