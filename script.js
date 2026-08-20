@@ -60,7 +60,7 @@ const products = [
         price: 37000,
         image: 'imagenes/termo-stitch-azul.jpeg',
         sizes: ['Única'],
-        desc: 'Termo deportivo con correa, edición Stitch.',
+        desc: 'Termo deportivo edición Stitch.',
         badge: '¡Última unidad!',
         stock: 1
     },
@@ -71,7 +71,7 @@ const products = [
         price: 37000,
         image: 'imagenes/termo-stitch-rosado.jpeg',
         sizes: ['Única'],
-        desc: 'Termo deportivo con correa, edición Stitch.',
+        desc: 'Termo deportivo edición Stitch.',
         badge: '¡Última unidad!',
         stock: 1
     },
@@ -82,7 +82,7 @@ const products = [
         price: 37000,
         image: 'imagenes/termo-stitch-lila.jpeg',
         sizes: ['Única'],
-        desc: 'Termo deportivo con correa, edición Stitch & Angel.',
+        desc: 'Termo deportivo edición Stitch & Angel.',
         badge: '¡Última unidad!',
         stock: 1
     },
@@ -93,7 +93,7 @@ const products = [
         price: 37000,
         image: 'imagenes/termo-stitch-verde.jpeg',
         sizes: ['Única'],
-        desc: 'Termo deportivo con correa, edición Stitch & Angel.',
+        desc: 'Termo deportivo edición Stitch & Angel.',
         badge: '¡Última unidad!',
         stock: 1
     },
