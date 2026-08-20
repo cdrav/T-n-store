@@ -111,6 +111,30 @@ const products = [
         stock: 2
     },
 
+    // --- Salidas de Baño en Falda ---
+    {
+        id: 'falda-borlas',
+        name: 'Salida de Baño Falda con Borlas',
+        category: 'salidas-de-bano-falda',
+        price: 65000,
+        images: ['imagenes/falda-borlas-1.jpeg', 'imagenes/falda-borlas-2.jpeg'],
+        sizes: ['Única'],
+        desc: 'Falda tejida en crochet con borlas, ideal para tus días de playa o piscina.',
+        badge: '¡Última unidad!',
+        stock: 1
+    },
+    {
+        id: 'falda-tejida',
+        name: 'Salida de Baño Falda Tejida',
+        category: 'salidas-de-bano-falda',
+        price: 65000,
+        images: ['imagenes/falda-tejida-1.jpeg', 'imagenes/falda-tejida-2.jpeg', 'imagenes/falda-tejida-3.jpeg'],
+        sizes: ['Única'],
+        desc: 'Falda tejida con diseño calado, ideal para tus días de playa o piscina.',
+        badge: '¡Última unidad!',
+        stock: 1
+    },
+
     // --- Vestidos de Baño ---
     {
         id: 'vestido-bano-negro',
