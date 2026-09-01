@@ -40,7 +40,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- CSS de Tailwind compilado y purgado (ver README/package.json: npm run build:css) -->
-    <link rel="stylesheet" href="tailwind.css?v=1788241712152">
+    <link rel="stylesheet" href="tailwind.css?v=1788242358906">
     <!-- Iconos (solo subconjuntos solid + brands, usados en el sitio) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
@@ -151,6 +151,42 @@
                     <img src="imagenes/logo/logo-tin-store.jpeg" alt="TínStore" class="absolute -bottom-8 -left-8 w-32 h-32 sm:w-40 sm:h-40 rounded-full shadow-2xl ring-4 ring-white transform -rotate-6 hover:rotate-0 transition duration-500 z-10">
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Kebonita Swimwear se une a TínStore -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-kebonita-teal via-kebonita-teal to-kebonita-gold py-16 sm:py-24">
+        <!-- textura de puntos -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle, white 2px, transparent 2px); background-size: 28px 28px;"></div>
+        <!-- resplandores decorativos -->
+        <div class="absolute -top-10 -left-10 w-72 h-72 bg-white/20 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+        <div class="absolute -bottom-16 -right-10 w-80 h-80 bg-white/15 rounded-full blur-3xl animate-pulse pointer-events-none" style="animation-delay: 1s;"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+            <span class="inline-flex items-center gap-2 bg-white text-kebonita-teal-dark text-xs sm:text-sm font-bold uppercase tracking-widest px-5 py-2 rounded-full mb-8 shadow-lg animate-pulse">
+                <i class="fa-solid fa-sparkles"></i> Nueva Alianza
+            </span>
+
+            <div class="relative inline-block mb-8">
+                <div class="absolute inset-0 bg-white rounded-3xl blur-xl opacity-60 animate-pulse"></div>
+                <div class="relative bg-white rounded-3xl shadow-2xl px-10 py-6 sm:px-16 sm:py-8 transform hover:scale-105 transition duration-500">
+                    <img src="imagenes/kebonita-logo.jpeg" alt="Kebonita Swimwear" class="h-20 sm:h-28 w-auto object-contain mx-auto">
+                </div>
+            </div>
+
+            <h2 class="text-4xl sm:text-6xl font-bold text-white leading-tight drop-shadow-lg">
+                Kebonita Swimwear <span class="block sm:inline text-kebonita-teal-dark bg-white px-4 py-1 rounded-2xl mt-2 sm:mt-0 inline-block shadow-lg">renace</span>
+            </h2>
+            <p class="mt-6 text-lg sm:text-2xl text-white font-medium max-w-2xl mx-auto drop-shadow">
+                Dos marcas de Roldanillo, una sola fuerza.
+            </p>
+            <p class="mt-2 text-base sm:text-lg text-white/90 max-w-xl mx-auto">
+                La colección de trajes de baño que ya amas, ahora dentro de TínStore.
+            </p>
+
+            <a href="kebonita.html" class="mt-10 inline-flex items-center gap-2 px-10 py-4 bg-white text-kebonita-teal-dark font-bold text-lg rounded-full shadow-2xl hover:scale-105 hover:shadow-white/50 transition transform">
+                Descubre Kebonita <i class="fa-solid fa-arrow-right"></i>
+            </a>
         </div>
     </section>
 
@@ -297,21 +333,6 @@
         </div>
     </section>
 
-    <!-- Kebonita Swimwear se une a TínStore -->
-    <section class="py-14 bg-gradient-to-r from-kebonita-teal to-kebonita-gold relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle, white 2px, transparent 2px); background-size: 28px 28px;"></div>
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
-            <img src="imagenes/kebonita-logo.jpeg" alt="Kebonita Swimwear" class="h-24 w-auto object-contain bg-white rounded-2xl shadow-xl px-5 py-3 flex-shrink-0">
-            <div class="flex-1">
-                <span class="text-white/90 font-semibold tracking-wider uppercase text-sm">¡Sorpresa!</span>
-                <h2 class="mt-1 text-3xl sm:text-4xl font-bold text-white leading-tight">Kebonita Swimwear renace en TínStore</h2>
-                <p class="mt-3 text-white/90 text-lg">La marca de trajes de baño que ya conoces, ahora con toda la fuerza de TínStore detrás.</p>
-            </div>
-            <a href="kebonita.html" class="flex-shrink-0 px-8 py-3 bg-white text-kebonita-teal-dark font-semibold rounded-full shadow-lg hover:-translate-y-1 transition transform whitespace-nowrap">
-                Descubre Kebonita <i class="fa-solid fa-arrow-right ml-1"></i>
-            </a>
-        </div>
-    </section>
 
     <!-- Sección de Pago Seguro (PSE) -->
     <section id="seccion-pagos" class="py-12 bg-white border-t border-gray-100">
@@ -420,6 +441,6 @@
     </div>
 
     <!-- Lógica Principal -->
-    <script src="script.js?v=1788241712152"></script>
+    <script src="script.js?v=1788242358906"></script>
 </body>
 </html>
