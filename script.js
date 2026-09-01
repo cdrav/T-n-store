@@ -132,11 +132,12 @@ const products = [
         stock: 1
     },
 
-    // --- Ropa ---
+    // --- Kebonita: Salidas de Baño ---
     {
         id: 'salida-bano-crochet',
         name: 'Salida de Baño Crochet',
         category: 'salidas-de-bano',
+        brand: 'kebonita',
         price: 51000,
         image: 'imagenes/salida-bano-crochet.jpeg',
         sizes: ['Única'],
@@ -145,11 +146,12 @@ const products = [
         stock: 2
     },
 
-    // --- Salidas de Baño en Falda ---
+    // --- Kebonita: Salidas de Baño en Falda ---
     {
         id: 'falda-borlas',
         name: 'Salida de Baño Falda con Borlas',
         category: 'salidas-de-bano-falda',
+        brand: 'kebonita',
         price: 65000,
         images: ['imagenes/falda-borlas-1.jpeg', 'imagenes/falda-borlas-2.jpeg'],
         sizes: ['Única'],
@@ -161,6 +163,7 @@ const products = [
         id: 'falda-tejida',
         name: 'Salida de Baño Falda Tejida',
         category: 'salidas-de-bano-falda',
+        brand: 'kebonita',
         price: 65000,
         images: ['imagenes/falda-tejida-1.jpeg', 'imagenes/falda-tejida-2.jpeg', 'imagenes/falda-tejida-3.jpeg'],
         sizes: ['Única'],
@@ -169,11 +172,12 @@ const products = [
         stock: 1
     },
 
-    // --- Vestidos de Baño ---
+    // --- Kebonita: Vestidos de Baño ---
     {
         id: 'vestido-bano-negro',
         name: 'Vestido de Baño Negro',
         category: 'vestidos-de-bano',
+        brand: 'kebonita',
         price: 59000,
         image: 'imagenes/vestido-bano-negro.jpeg',
         sizes: ['M'],
@@ -185,6 +189,7 @@ const products = [
         id: 'vestido-bano-crudo',
         name: 'Vestido de Baño',
         category: 'vestidos-de-bano',
+        brand: 'kebonita',
         price: 59000,
         images: ['imagenes/vestido-bano-crudo.jpeg', 'imagenes/vestido-bano-crudo-2.jpeg'],
         sizes: ['M'],
