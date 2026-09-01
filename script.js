@@ -542,11 +542,16 @@ function cycleProductImage(productId, direction) {
     if (dots[next]) { dots[next].classList.remove('bg-white/50'); dots[next].classList.add('bg-white'); }
 }
 
-function renderProducts() {
-    const container = document.getElementById('products-container');
+function renderProductGrid(containerId, list) {
+    const container = document.getElementById(containerId);
     if (!container) return;
 
-    container.innerHTML = products.map(product => {
+    if (list.length === 0) {
+        container.innerHTML = `<p class="text-gray-400 text-center col-span-full py-12">Muy pronto disponible — vuelve prontito 💛</p>`;
+        return;
+    }
+
+    container.innerHTML = list.map(product => {
         const sizes = product.sizes || ['Única'];
         const images = product.images || [product.image];
         const isCarousel = images.length > 1;
@@ -588,6 +593,14 @@ function renderProducts() {
     }).join('');
 }
 
+function renderProducts() {
+    renderProductGrid('products-container', products.filter(p => p.brand !== 'kebonita'));
+}
+
+function renderKebonitaProducts() {
+    renderProductGrid('kebonita-products-container', products.filter(p => p.brand === 'kebonita'));
+}
+
 function selectCategory(category) {
     const section = document.getElementById('coleccion');
     if(section) section.scrollIntoView({ behavior: 'smooth' });
@@ -608,6 +621,7 @@ function filterSelection(category) {
 // --- 5. Inicialización ---
 document.addEventListener('DOMContentLoaded', () => {
     renderProducts();
+    renderKebonitaProducts();
     updateCartUI();
     checkWompiReturn();
 

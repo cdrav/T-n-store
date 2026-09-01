@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!-- Kebonita Swimwear × TínStore -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebonita Swimwear × TínStore</title>
+    <meta name="description" content="Kebonita Swimwear se une a TínStore. Descubre su colección de trajes de baño con la misma calidad y estilo de siempre.">
+    <link rel="canonical" href="https://tinstore.com.co/kebonita.html" />
+    <link rel="icon" type="image/jpeg" href="imagenes/logo/logo-tin-store.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="TínStore">
+    <meta property="og:title" content="Kebonita Swimwear × TínStore">
+    <meta property="og:description" content="Kebonita Swimwear se une a TínStore. Descubre su colección de trajes de baño.">
+    <meta property="og:image" content="https://tinstore.com.co/imagenes/kebonita-logo.jpeg">
+    <meta property="og:url" content="https://tinstore.com.co/kebonita.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://tinstore.com.co/imagenes/kebonita-logo.jpeg">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "OnlineStore",
+        "name": "Kebonita Swimwear",
+        "url": "https://tinstore.com.co/kebonita.html",
+        "description": "Marca de trajes de baño de Roldanillo, Valle del Cauca, ahora fusionada con TínStore.",
+        "sameAs": [
+            "https://www.facebook.com/kebonita.roldanillo",
+            "https://www.instagram.com/kebonitashop/",
+            "https://www.tiktok.com/@kebonitashop5"
+        ]
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- CSS de Tailwind compilado y purgado (ver README/package.json: npm run build:css) -->
+    <link rel="stylesheet" href="tailwind.css?v=1788241712152">
+    <!-- Iconos (solo subconjuntos solid + brands, usados en el sitio) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass-effect shadow-sm transition-all duration-300">
+        <!-- Barra: parte de TínStore -->
+        <a href="index.html" class="block bg-kebonita-teal text-white text-center text-xs sm:text-sm font-medium py-2 px-4 hover:opacity-90 transition">
+            <i class="fa-solid fa-arrow-left mr-1"></i>
+            Kebonita ahora es parte de <b>TínStore</b> — ver toda la tienda
+        </a>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex-shrink-0 flex items-center cursor-pointer group">
+                    <img src="imagenes/kebonita-logo.jpeg" alt="Kebonita Swimwear" class="h-14 sm:h-16 w-auto object-contain transform group-hover:scale-105 transition duration-300">
+                </a>
+
+                <!-- Menú Desktop -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-kebonita-teal font-medium transition duration-300">Inicio</a>
+                    <a href="#coleccion-kebonita" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-kebonita-teal font-medium transition duration-300">Colección</a>
+                    <a href="index.html" class="px-4 py-2 rounded-full text-gray-600 hover:text-white hover:bg-kebonita-teal font-medium transition duration-300">TínStore</a>
+                </div>
+
+                <!-- Iconos Acción -->
+                <div class="flex items-center space-x-4">
+                    <button onclick="toggleCart()" class="text-gray-600 hover:text-kebonita-teal transition relative">
+                        <i class="fa-solid fa-shopping-bag text-xl"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-2 bg-kebonita-teal text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">0</span>
+                    </button>
+                    <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-gray-600 hover:text-kebonita-teal focus:outline-none ml-2 p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 w-full shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#inicio" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-kebonita-teal hover:bg-gray-50 border-b border-gray-50">Inicio</a>
+                <a href="#coleccion-kebonita" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-kebonita-teal hover:bg-gray-50 border-b border-gray-50">Colección</a>
+                <a href="index.html" class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-kebonita-teal hover:bg-gray-50">Ir a TínStore</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="inicio" class="relative pt-40 pb-20 overflow-hidden bg-gradient-to-br from-kebonita-teal via-kebonita-teal to-kebonita-gold scroll-mt-24">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle, white 2px, transparent 2px); background-size: 32px 32px;"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+            <div class="bg-white inline-block rounded-3xl shadow-2xl px-8 py-6 sm:px-14 sm:py-10 mb-8">
+                <img src="imagenes/kebonita-logo.jpeg" alt="Kebonita Swimwear" class="h-24 sm:h-32 w-auto object-contain mx-auto">
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-bold text-white leading-tight drop-shadow-sm">
+                Kebonita <span class="text-kebonita-gold-dark bg-white px-3 rounded-xl inline-block mt-2 sm:mt-0">renace</span>
+            </h1>
+            <p class="mt-6 text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+                La marca de trajes de baño de Roldanillo que ya conoces, ahora con toda la fuerza de <b>TínStore</b> detrás. Misma pasión por vestirte segura y radiante, con un hogar más grande para seguir creciendo.
+            </p>
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="#coleccion-kebonita" class="px-8 py-3 bg-white text-kebonita-teal-dark font-semibold rounded-full shadow-lg hover:-translate-y-1 transition transform">
+                    Ver Colección
+                </a>
+                <a href="https://wa.me/573017638046?text=Hola!%20Quiero%20saber%20m%C3%A1s%20de%20Kebonita" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition">
+                    Escribir al WhatsApp
+                </a>
+            </div>
+            <div class="mt-8 flex justify-center gap-5">
+                <a href="https://www.facebook.com/kebonita.roldanillo" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white/90 hover:text-white transition text-2xl"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/kebonitashop/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/90 hover:text-white transition text-2xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@kebonitashop5" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="text-white/90 hover:text-white transition text-2xl"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historia -->
+    <section class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-kebonita-gold-dark font-semibold tracking-wider uppercase text-sm">Dos marcas, una sola fuerza</span>
+            <h2 class="mt-2 text-3xl font-bold text-gray-900">¿Por qué Kebonita renace?</h2>
+            <p class="mt-6 text-gray-600 text-lg leading-relaxed">
+                Kebonita nació en Roldanillo con un propósito claro: vestir a cada mujer con trajes de baño que la hagan sentir segura y radiante, en la piscina o en la playa. Hoy da un paso más grande — se une a <b>TínStore</b> para seguir creciendo, sin perder la esencia que ya conoces y sigues.
+            </p>
+            <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+                Misma calidad, mismos diseños que te encantan, ahora con un pago 100% seguro con Wompi y toda la logística de TínStore respaldándote.
+            </p>
+        </div>
+    </section>
+
+    <!-- Colección Kebonita -->
+    <section id="coleccion-kebonita" class="py-16 bg-gray-50 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-kebonita-gold-dark font-semibold tracking-wider uppercase text-sm">Kebonita Swimwear</span>
+                <h2 class="mt-2 text-3xl font-bold text-gray-900">Nuestra Colección</h2>
+                <p class="text-gray-500 mt-2">Trajes de baño con estilo propio</p>
+            </div>
+            <div id="kebonita-products-container" class="flex flex-wrap justify-center gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-kebonita-teal-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <img src="imagenes/kebonita-logo.jpeg" alt="Kebonita Swimwear" class="h-12 w-auto object-contain bg-white rounded-lg px-3 py-2 mb-4">
+                <p class="text-white/70 text-sm">Trajes de baño con estilo propio, ahora parte de la familia TínStore.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Síguenos</h4>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/kebonita.roldanillo" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-white/70 hover:text-white transition text-xl"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/kebonitashop/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-white/70 hover:text-white transition text-xl"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@kebonitashop5" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="text-white/70 hover:text-white transition text-xl"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Contáctanos</h4>
+                <a href="https://wa.me/573017638046" target="_blank" rel="noopener noreferrer" class="block text-white/70 text-sm mb-2 hover:text-white transition"><i class="fa-brands fa-whatsapp mr-2"></i> +57 301 763 8046</a>
+                <a href="mailto:somos.tinstore@gmail.com" class="block text-white/70 text-sm hover:text-white transition"><i class="fa-solid fa-envelope mr-2"></i> somos.tinstore@gmail.com</a>
+            </div>
+        </div>
+        <div class="border-t border-white/20 mt-8 pt-8 text-center text-white/50 text-xs">
+            &copy; 2026 Kebonita Swimwear × TínStore. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Modal del Carrito (compartido con TínStore) -->
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden flex justify-center items-center p-4">
+        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="bg-kebonita-teal p-4 flex justify-between items-center text-white">
+                <h3 class="font-bold text-lg"><i class="fa-solid fa-cart-shopping mr-2"></i>Tu Carrito</h3>
+                <button onclick="toggleCart()" class="hover:text-gray-200"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div id="cart-items" class="p-4 overflow-y-auto flex-grow space-y-3">
+                <p class="text-gray-500 text-center py-4">Tu carrito está vacío.</p>
+            </div>
+            <div class="bg-gray-50 p-4 border-t border-gray-100">
+                <div class="flex justify-between items-center mb-4 text-lg font-bold text-gray-800">
+                    <span>Total:</span>
+                    <span id="cart-total">$0</span>
+                </div>
+                <div class="space-y-3 mb-4">
+                    <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">Datos de Envío</p>
+                    <input type="text" id="customer-name" placeholder="Nombre Completo" class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-kebonita-teal focus:ring-1 focus:ring-kebonita-teal outline-none text-sm">
+                    <input type="text" id="customer-address" placeholder="Dirección de Entrega" class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-kebonita-teal focus:ring-1 focus:ring-kebonita-teal outline-none text-sm">
+                    <input type="tel" id="customer-phone" placeholder="Teléfono / WhatsApp" class="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-kebonita-teal focus:ring-1 focus:ring-kebonita-teal outline-none text-sm">
+                </div>
+                <button onclick="payWithWompi()" class="w-full bg-[#5B21B6] text-white font-bold py-3 rounded-xl hover:bg-[#4C1D95] transition flex justify-center items-center gap-2 shadow-lg transform active:scale-95">
+                    <span>Pagar con Wompi</span>
+                    <i class="fa-solid fa-lock text-lg"></i>
+                </button>
+                <a href="https://wa.me/573017638046?text=Hola!%20Ya%20realic%C3%A9%20mi%20pago%2C%20aqu%C3%AD%20est%C3%A1%20mi%20comprobante" target="_blank" rel="noopener noreferrer" class="block text-xs text-gray-400 text-center mt-3 hover:text-kebonita-teal transition">
+                    Después de pagar, comparte tu comprobante por WhatsApp para agilizar tu envío
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Información -->
+    <div id="info-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] hidden flex justify-center items-center p-4">
+        <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <div class="bg-kebonita-teal p-4 flex justify-between items-center text-white">
+                <h3 id="info-modal-title" class="font-bold text-lg"></h3>
+                <button onclick="closeInfoModal()" class="hover:text-gray-200"><i class="fa-solid fa-xmark text-xl"></i></button>
+            </div>
+            <div id="info-modal-body" class="p-5 overflow-y-auto text-sm text-gray-600 leading-relaxed space-y-3"></div>
+        </div>
+    </div>
+
+    <script src="script.js?v=1788241712152"></script>
+</body>
+</html>

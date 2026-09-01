@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const version = Date.now();
-const files = ['index.html', 'nosotros.html'];
+const files = ['index.html', 'nosotros.html', 'kebonita.html'];
 
 files.forEach(file => {
     const filePath = path.join(__dirname, '..', file);
