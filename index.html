@@ -40,7 +40,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- CSS de Tailwind compilado y purgado (ver README/package.json: npm run build:css) -->
-    <link rel="stylesheet" href="tailwind.css?v=1788242358906">
+    <link rel="stylesheet" href="tailwind.css?v=1788242636763">
     <!-- Iconos (solo subconjuntos solid + brands, usados en el sitio) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
@@ -53,9 +53,9 @@
     <!-- Navbar (Fijo y limpio) -->
     <nav class="fixed top-0 w-full z-50 glass-effect shadow-sm transition-all duration-300">
         <!-- Barra de historia / causa social -->
-        <a href="nosotros.html" class="block bg-gradient-to-r from-brand to-brand-dark text-white text-center text-xs sm:text-sm font-medium py-2 px-4 hover:opacity-90 transition">
+        <a href="nosotros.html" class="block bg-gradient-to-r from-brand via-brand-dark to-kebonita-teal-dark text-white text-center text-xs sm:text-sm font-medium py-2 px-4 hover:opacity-90 transition">
             <i class="fa-solid fa-heart mr-1"></i>
-            <span class="hidden sm:inline">Un sueño que renace tras el terremoto en Roldanillo — </span>Conoce nuestra historia
+            <span class="hidden sm:inline">Roldanillo, un solo sueño: TínStore nace, Kebonita renace — </span>Conoce la historia completa
             <i class="fa-solid fa-arrow-right ml-1"></i>
         </a>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -154,39 +154,55 @@
         </div>
     </section>
 
-    <!-- Kebonita Swimwear se une a TínStore -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-kebonita-teal via-kebonita-teal to-kebonita-gold py-16 sm:py-24">
+    <!-- Un solo sueño: TínStore nace, Kebonita renace -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-brand via-brand-dark to-kebonita-teal-dark py-16 sm:py-24">
         <!-- textura de puntos -->
         <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle, white 2px, transparent 2px); background-size: 28px 28px;"></div>
         <!-- resplandores decorativos -->
-        <div class="absolute -top-10 -left-10 w-72 h-72 bg-white/20 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
-        <div class="absolute -bottom-16 -right-10 w-80 h-80 bg-white/15 rounded-full blur-3xl animate-pulse pointer-events-none" style="animation-delay: 1s;"></div>
+        <div class="absolute -top-10 -left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-pulse pointer-events-none"></div>
+        <div class="absolute -bottom-16 -right-10 w-80 h-80 bg-kebonita-gold/20 rounded-full blur-3xl animate-pulse pointer-events-none" style="animation-delay: 1s;"></div>
 
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
-            <span class="inline-flex items-center gap-2 bg-white text-kebonita-teal-dark text-xs sm:text-sm font-bold uppercase tracking-widest px-5 py-2 rounded-full mb-8 shadow-lg animate-pulse">
-                <i class="fa-solid fa-sparkles"></i> Nueva Alianza
+            <span class="inline-flex items-center gap-2 bg-white text-brand text-xs sm:text-sm font-bold uppercase tracking-widest px-5 py-2 rounded-full mb-8 shadow-lg animate-pulse">
+                <i class="fa-solid fa-sparkles"></i> Roldanillo, un solo sueño
             </span>
 
-            <div class="relative inline-block mb-8">
-                <div class="absolute inset-0 bg-white rounded-3xl blur-xl opacity-60 animate-pulse"></div>
-                <div class="relative bg-white rounded-3xl shadow-2xl px-10 py-6 sm:px-16 sm:py-8 transform hover:scale-105 transition duration-500">
-                    <img src="imagenes/kebonita-logo.jpeg" alt="Kebonita Swimwear" class="h-20 sm:h-28 w-auto object-contain mx-auto">
+            <!-- Dos logos, una sola historia -->
+            <div class="flex items-center justify-center gap-4 sm:gap-8 mb-8">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-white rounded-3xl blur-xl opacity-50 animate-pulse"></div>
+                    <div class="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-3 sm:p-5 transform hover:scale-105 transition duration-500">
+                        <img src="imagenes/logo/logo-tin-store.jpeg" alt="TínStore" class="h-14 sm:h-24 w-14 sm:w-24 object-cover rounded-xl">
+                    </div>
+                </div>
+                <i class="fa-solid fa-plus text-white/70 text-xl sm:text-3xl"></i>
+                <div class="relative">
+                    <div class="absolute inset-0 bg-white rounded-3xl blur-xl opacity-50 animate-pulse" style="animation-delay: 0.5s;"></div>
+                    <div class="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl px-4 py-3 sm:px-8 sm:py-5 transform hover:scale-105 transition duration-500">
+                        <img src="imagenes/kebonita-logo.jpeg" alt="Kebonita Swimwear" class="h-10 sm:h-16 w-auto object-contain">
+                    </div>
                 </div>
             </div>
 
             <h2 class="text-4xl sm:text-6xl font-bold text-white leading-tight drop-shadow-lg">
-                Kebonita Swimwear <span class="block sm:inline text-kebonita-teal-dark bg-white px-4 py-1 rounded-2xl mt-2 sm:mt-0 inline-block shadow-lg">renace</span>
+                TínStore <span class="text-brand bg-white px-3 py-1 rounded-2xl inline-block shadow-lg">nace</span>,
+                Kebonita <span class="text-kebonita-teal-dark bg-white px-3 py-1 rounded-2xl inline-block shadow-lg">renace</span>
             </h2>
             <p class="mt-6 text-lg sm:text-2xl text-white font-medium max-w-2xl mx-auto drop-shadow">
-                Dos marcas de Roldanillo, una sola fuerza.
+                El mismo sueño de reconstrucción que le dio vida a TínStore, hoy le abre las puertas a Kebonita Swimwear.
             </p>
-            <p class="mt-2 text-base sm:text-lg text-white/90 max-w-xl mx-auto">
-                La colección de trajes de baño que ya amas, ahora dentro de TínStore.
+            <p class="mt-2 text-base sm:text-lg text-white/80 max-w-xl mx-auto">
+                Dos marcas de Roldanillo, una sola fuerza para seguir creciendo juntas.
             </p>
 
-            <a href="kebonita.html" class="mt-10 inline-flex items-center gap-2 px-10 py-4 bg-white text-kebonita-teal-dark font-bold text-lg rounded-full shadow-2xl hover:scale-105 hover:shadow-white/50 transition transform">
-                Descubre Kebonita <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="nosotros.html" class="inline-flex items-center gap-2 px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition">
+                    Nuestra Historia <i class="fa-solid fa-heart"></i>
+                </a>
+                <a href="kebonita.html" class="inline-flex items-center gap-2 px-8 py-3 bg-white text-kebonita-teal-dark font-bold rounded-full shadow-2xl hover:scale-105 hover:shadow-white/50 transition transform">
+                    Descubre Kebonita <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -441,6 +457,6 @@
     </div>
 
     <!-- Lógica Principal -->
-    <script src="script.js?v=1788242358906"></script>
+    <script src="script.js?v=1788242636763"></script>
 </body>
 </html>
