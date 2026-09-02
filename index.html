@@ -40,7 +40,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- CSS de Tailwind compilado y purgado (ver README/package.json: npm run build:css) -->
-    <link rel="stylesheet" href="tailwind.css?v=1788243214848">
+    <link rel="stylesheet" href="tailwind.css?v=1788393537702">
     <!-- Iconos (solo subconjuntos solid + brands, usados en el sitio) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/solid.min.css">
@@ -333,13 +333,17 @@
     <section id="seccion-pagos" class="py-12 bg-white border-t border-gray-100">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h3 class="text-xl font-semibold text-gray-800 mb-6">Pagos seguros y fáciles</h3>
-            <div class="flex justify-center">
-                <div class="inline-flex flex-col items-center gap-2 px-6 py-3 rounded-xl border border-purple-100 bg-purple-50">
-                    <span class="text-2xl font-extrabold tracking-tight" style="color:#5B21B6">wompi</span>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="inline-flex flex-col items-center gap-2 px-8 py-4 rounded-xl border border-purple-100 bg-purple-50 shadow-sm">
+                    <span class="text-2xl sm:text-3xl font-extrabold tracking-tight" style="color:#5B21B6">wompi</span>
                     <span class="text-xs text-gray-500">PSE · Nequi · Tarjetas</span>
                 </div>
+                <div class="inline-flex flex-col items-center gap-2 px-8 py-4 rounded-xl border border-red-100 bg-red-50 shadow-sm">
+                    <span class="text-2xl sm:text-3xl font-extrabold tracking-tight text-red-600"><i class="fa-solid fa-credit-card mr-1"></i>Sistecrédito</span>
+                    <span class="text-xs text-gray-500">Compra ahora, paga después</span>
+                </div>
             </div>
-            <p class="mt-4 text-sm text-gray-400">Pagos procesados de forma segura por Wompi al confirmar tu pedido.</p>
+            <p class="mt-4 text-sm text-gray-400">Paga de contado con Wompi, o financia tu compra con Sistecrédito.</p>
         </div>
     </section>
 
@@ -436,6 +440,6 @@
     </div>
 
     <!-- Lógica Principal -->
-    <script src="script.js?v=1788243214848"></script>
+    <script src="script.js?v=1788393537702"></script>
 </body>
 </html>
